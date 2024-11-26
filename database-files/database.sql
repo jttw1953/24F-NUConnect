@@ -198,113 +198,34 @@ CREATE TABLE `AuditLog` (
     CONSTRAINT fk_auditlog_user FOREIGN KEY (performedBy) REFERENCES Admin (adminID) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
--- Insert into User
-INSERT INTO User (registrationDate, email, phoneNum, role, firstName, lastName, username, password, securityLevel)
-VALUES
-    (NOW(), 'jdoe@example.com', '1234567890', 'Student', 'John', 'Doe', 'jdoe', 'password123', 'Medium'),
-    (NOW(), 'asmith@example.com', '0987654321', 'Employer', 'Alice', 'Smith', 'asmith', 'securePass', 'High'),
-    (NOW(), 'admin@example.com', '1122334455', 'Admin', 'Bob', 'Admin', 'admin1', 'adminPass', 'High');
+CREATE TABLE UserDiscussions (
+    userID INT NOT NULL,
+    discussionID INT NOT NULL,
+    PRIMARY KEY (userID, discussionID),
+    FOREIGN KEY (userID) REFERENCES Users(userID),
+    FOREIGN KEY (discussionID) REFERENCES Discussions(discussionID)
+);
 
--- Insert into Admin
-INSERT INTO Admin (userID)
-VALUES
-    (3),
-    (2);
+CREATE TABLE UserComments (
+    userID INT NOT NULL,
+    commentID INT NOT NULL,
+    PRIMARY KEY (userID, commentID),
+    FOREIGN KEY (userID) REFERENCES Users(userID),
+    FOREIGN KEY (commentID) REFERENCES Comments(commentID)
+);
 
--- Insert into Student
-INSERT INTO Student (userID, studentID, major, admitYear, tags, updatedAt)
-VALUES
-    (1, 101, 'Computer Science', 2022, 'co-op, software engineer', NOW()),
-    (1, 102, 'Data Science', 2023, 'co-op, data analysis', NOW());
+CREATE TABLE DiscussionFlags (
+    discussionID INT NOT NULL,
+    flagID INT NOT NULL,
+    PRIMARY KEY (discussionID, flagID),
+    FOREIGN KEY (discussionID) REFERENCES Discussions(discussionID),
+    FOREIGN KEY (flagID) REFERENCES Flags(flagID)
+);
 
--- Insert into Skill
-INSERT INTO Skill (name, description, studentID)
-VALUES
-    ('Python', 'Proficient in Python programming.', 101),
-    ('Data Analysis', 'Skilled in data cleaning and visualization.', 102),
-    ('Machine Learning', 'Knowledge of basic ML algorithms.', 101);
-
--- Insert into Company
-INSERT INTO Company (name, industry, location)
-VALUES
-    ('TechCorp', 'Technology', 'Boston, MA'),
-    ('DataWorks', 'Data Analytics', 'San Francisco, CA'),
-    ('HealthTech', 'Healthcare Technology', 'Seattle, WA');
-
--- Insert into Employers
-INSERT INTO Employers (userID, companyID)
-VALUES
-    (2, 1),
-    (2, 2);
-
--- Insert into ForumDiscussion
-INSERT INTO ForumDiscussion (createdBy, content, title, tags, createdAt, updatedAt)
-VALUES
-    (1, 'What are some tips for acing technical interviews?', 'Technical Interview Tips', 'interview, tips', NOW(), NOW()),
-    (2, 'Join our webinar on data engineering!', 'Data Engineering Webinar', 'webinar, data', NOW(), NOW());
-
--- Insert into Job
-INSERT INTO Job (companyID, employerID, title, description, datePosted)
-VALUES
-    (1, 1, 'Software Engineer Co-op', 'We are seeking a motivated co-op student to join our team.', NOW()),
-    (2, 2, 'Data Analyst Co-op', 'Looking for students passionate about data analysis and visualization.', NOW());
-
--- Insert into Application
-INSERT INTO Application (studentID, jobID, dateSubmitted, status)
-VALUES
-    (101, 1, NOW(), 'Pending'),
-    (102, 2, NOW(), 'Reviewed');
-
--- Insert into Comment
-INSERT INTO Comment (createdBy, forumID, createdAt)
-VALUES
-    (1, 1, NOW()),
-    (2, 2, NOW());
-
--- Insert into DailySummary
-INSERT INTO DailySummary (jobID, applicationID, discussionID, notify)
-VALUES
-    (1, 1, 1, 1),
-    (2, 2, 2, 2);
-
--- Insert into ActivityLog
-INSERT INTO ActivityLog (logTime, userID, activityType)
-VALUES
-    (NOW(), 1, 'Login'),
-    (NOW(), 2, 'Posted on Forum');
-
--- Insert into ContentFlag
-INSERT INTO ContentFlag (contentID, timestamp, reason, status)
-VALUES
-    (1, NOW(), 'Spam content', 'Resolved'),
-    (2, NOW(), 'Inappropriate content', 'Unresolved');
-
--- Insert into SecurityLog
-INSERT INTO SecurityLog (actionType, userID, timestamp, status)
-VALUES
-    ('Failed Login', 1, NOW(), 'Unresolved'),
-    ('Password Change', 2, NOW(), 'Resolved');
-
--- Insert into SystemAlert
-INSERT INTO SystemAlert (alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy)
-VALUES
-    ('Unauthorized Access', 101, 'Multiple failed login attempts.', NOW(), 'Unresolved', 1, 1),
-    ('Server Downtime', 102, 'Scheduled maintenance.', NOW(), 'Resolved', 1, NULL);
-
--- Insert into PerformanceMetrics
-INSERT INTO PerformanceMetrics (accessedBy, serverTime, responseTime, timestamp, memoryUsage, cpuUsage)
-VALUES
-    (1, 120, 15, NOW(), 75, 30),
-    (2, 150, 20, NOW(), 80, 35);
-
--- Insert into Maintenance
-INSERT INTO Maintenance (performedBy, status, startTime, endTime, description)
-VALUES
-    (1, 'Scheduled', '2024-11-20 22:00:00', '2024-11-21 02:00:00', 'Routine maintenance'),
-    (1, 'Completed', '2024-11-18 01:00:00', '2024-11-18 03:00:00', 'Database optimization');
-
--- Insert into AuditLog
-INSERT INTO AuditLog (performedBy, actionType, timestamp, changes)
-VALUES
-    (1, 'Role Update', NOW(), 'Updated user role to Admin'),
-    (2, 'Password Reset', NOW(), 'Reset password for user ID 1');
+CREATE TABLE CommentFlags (
+    commentID INT NOT NULL,
+    flagID INT NOT NULL,
+    PRIMARY KEY (commentID, flagID),
+    FOREIGN KEY (commentID) REFERENCES Comments(commentID),
+    FOREIGN KEY (flagID) REFERENCES Flags(flagID)
+);
