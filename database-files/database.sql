@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS NUConnect;
+dDROP DATABASE IF EXISTS NUConnect;
 
 CREATE DATABASE IF NOT EXISTS NUConnect;
 
@@ -198,7 +198,7 @@ CREATE TABLE `AuditLog` (
     CONSTRAINT fk_auditlog_user FOREIGN KEY (performedBy) REFERENCES Admin (adminID) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
-CREATE TABLE UserDiscussions (
+CREATE TABLE 'UserDiscussions' (
     userID INT NOT NULL,
     discussionID INT NOT NULL,
     PRIMARY KEY (userID, discussionID),
@@ -206,7 +206,7 @@ CREATE TABLE UserDiscussions (
     FOREIGN KEY (discussionID) REFERENCES Discussions(discussionID)
 );
 
-CREATE TABLE UserComments (
+CREATE TABLE 'UserComments' (
     userID INT NOT NULL,
     commentID INT NOT NULL,
     PRIMARY KEY (userID, commentID),
@@ -214,7 +214,7 @@ CREATE TABLE UserComments (
     FOREIGN KEY (commentID) REFERENCES Comments(commentID)
 );
 
-CREATE TABLE DiscussionFlags (
+CREATE TABLE 'DiscussionFlags' (
     discussionID INT NOT NULL,
     flagID INT NOT NULL,
     PRIMARY KEY (discussionID, flagID),
@@ -222,7 +222,7 @@ CREATE TABLE DiscussionFlags (
     FOREIGN KEY (flagID) REFERENCES Flags(flagID)
 );
 
-CREATE TABLE CommentFlags (
+CREATE TABLE 'CommentFlags' (
     commentID INT NOT NULL,
     flagID INT NOT NULL,
     PRIMARY KEY (commentID, flagID),
