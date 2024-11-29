@@ -1,4 +1,4 @@
-dDROP DATABASE IF EXISTS NUConnect;
+DROP DATABASE IF EXISTS NUConnect;
 
 CREATE DATABASE IF NOT EXISTS NUConnect;
 
@@ -198,34 +198,34 @@ CREATE TABLE `AuditLog` (
     CONSTRAINT fk_auditlog_user FOREIGN KEY (performedBy) REFERENCES Admin (adminID) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
-CREATE TABLE 'UserDiscussions' (
+CREATE TABLE `UserDiscussions` (
     userID INT NOT NULL,
     discussionID INT NOT NULL,
     PRIMARY KEY (userID, discussionID),
-    FOREIGN KEY (userID) REFERENCES Users(userID),
-    FOREIGN KEY (discussionID) REFERENCES Discussions(discussionID)
+    FOREIGN KEY (userID) REFERENCES User(userID),
+    FOREIGN KEY (discussionID) REFERENCES ForumDiscussion(discussionID)
 );
 
-CREATE TABLE 'UserComments' (
+CREATE TABLE `UserComments` (
     userID INT NOT NULL,
     commentID INT NOT NULL,
     PRIMARY KEY (userID, commentID),
-    FOREIGN KEY (userID) REFERENCES Users(userID),
-    FOREIGN KEY (commentID) REFERENCES Comments(commentID)
+    FOREIGN KEY (userID) REFERENCES User(userID),
+    FOREIGN KEY (commentID) REFERENCES Comment(commentID)
 );
 
-CREATE TABLE 'DiscussionFlags' (
+CREATE TABLE `DiscussionFlags` (
     discussionID INT NOT NULL,
     flagID INT NOT NULL,
     PRIMARY KEY (discussionID, flagID),
-    FOREIGN KEY (discussionID) REFERENCES Discussions(discussionID),
-    FOREIGN KEY (flagID) REFERENCES Flags(flagID)
+    FOREIGN KEY (discussionID) REFERENCES ForumDiscussion(discussionID),
+    FOREIGN KEY (flagID) REFERENCES ContentFlag(flagID)
 );
 
-CREATE TABLE 'CommentFlags' (
+CREATE TABLE `CommentFlags` (
     commentID INT NOT NULL,
     flagID INT NOT NULL,
     PRIMARY KEY (commentID, flagID),
-    FOREIGN KEY (commentID) REFERENCES Comments(commentID),
-    FOREIGN KEY (flagID) REFERENCES Flags(flagID)
+    FOREIGN KEY (commentID) REFERENCES Comment(commentID),
+    FOREIGN KEY (flagID) REFERENCES ContentFlag(flagID)
 );
