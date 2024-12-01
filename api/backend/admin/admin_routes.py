@@ -19,8 +19,8 @@ admin = Blueprint('admin', __name__)
 def get_system_alerts():
     cursor = db.get_db().cursor()
     cursor.execute('''
-        SELECT alert_id, description, timestamp, status
-        FROM system_alerts
+        SELECT alertID, description, timestamp, status
+        FROM SystemAlert
     ''')
     alerts = cursor.fetchall()
     the_response = make_response(jsonify(alerts))
@@ -36,7 +36,7 @@ def create_system_alert():
     status = alert_data['status']
 
     query = '''
-        INSERT INTO system_alerts (description, status)
+        INSERT INTO SystemAlert (description, status)
         VALUES (%s, %s)
     '''
     cursor = db.get_db().cursor()
@@ -55,20 +55,22 @@ def update_system_alert(alert_id):
 
     updates = []
     if status:
-        updates.append(f"status = '{status}'")
+        updates.append(f"status = %s")
     if description:
-        updates.append(f"description = '{description}'")
+        updates.append(f"description = %s")
     
     if not updates:
         return make_response("No updates provided", 400)
 
     query = f'''
-        UPDATE system_alerts
+        UPDATE SystemAlert
         SET {', '.join(updates)}
-        WHERE alert_id = {alert_id}
+        WHERE alertID = %s
     '''
+    params = [value for value in (status, description) if value]
+    params.append(alert_id)
     cursor = db.get_db().cursor()
-    cursor.execute(query)
+    cursor.execute(query, params)
     db.get_db().commit()
 
     return make_response(f"System alert {alert_id} updated successfully", 200)
@@ -79,8 +81,8 @@ def update_system_alert(alert_id):
 def get_maintenance_schedules():
     cursor = db.get_db().cursor()
     cursor.execute('''
-        SELECT maintenance_id, description, start_time, end_time, scheduled_by
-        FROM maintenance
+        SELECT maintenanceID, description, startTime, endTime, performedBy
+        FROM Maintenance
     ''')
     schedules = cursor.fetchall()
     the_response = make_response(jsonify(schedules))
@@ -92,8 +94,8 @@ def get_maintenance_schedules():
 @admin.route('/maintenance/<int:maintenance_id>', methods=['DELETE'])
 def delete_maintenance_schedule(maintenance_id):
     query = '''
-        DELETE FROM maintenance
-        WHERE maintenance_id = %s
+        DELETE FROM Maintenance
+        WHERE maintenanceID = %s
     '''
     cursor = db.get_db().cursor()
     cursor.execute(query, (maintenance_id,))
@@ -105,13 +107,12 @@ def delete_maintenance_schedule(maintenance_id):
 # Get all security logs
 @admin.route('/securityLogs', methods=['GET'])
 def get_security_logs():
-
     cursor = db.get_db().cursor()
     cursor.execute('''
-        SELECT log_id, action_type, ip_address, timestamp FROM security_log
+        SELECT logID, actionType, timestamp, status
+        FROM SecurityLog
     ''')
     logs = cursor.fetchall()
-    
     the_response = make_response(jsonify(logs))
     the_response.status_code = 200
     return the_response
@@ -122,8 +123,8 @@ def get_security_logs():
 def get_performance_metrics():
     cursor = db.get_db().cursor()
     cursor.execute('''
-        SELECT metric_id, server_name, response_time, memory_usage, cpu_usage
-        FROM performance_metric
+        SELECT metricID, accessedBy, serverTime, responseTime, memoryUsage, cpuUsage
+        FROM PerformanceMetrics
     ''')
     metrics = cursor.fetchall()
     the_response = make_response(jsonify(metrics))
@@ -138,16 +139,16 @@ def create_maintenance_schedule():
     current_app.logger.info(maintenance_data)
 
     description = maintenance_data['description']
-    start_time = maintenance_data['start_time']
-    end_time = maintenance_data['end_time']
-    scheduled_by = maintenance_data['scheduled_by']
+    start_time = maintenance_data['startTime']
+    end_time = maintenance_data['endTime']
+    performed_by = maintenance_data['performedBy']
 
     query = '''
-        INSERT INTO maintenance (description, start_time, end_time, scheduled_by)
+        INSERT INTO Maintenance (description, startTime, endTime, performedBy)
         VALUES (%s, %s, %s, %s)
     '''
     cursor = db.get_db().cursor()
-    cursor.execute(query, (description, start_time, end_time, scheduled_by))
+    cursor.execute(query, (description, start_time, end_time, performed_by))
     db.get_db().commit()
 
     response = make_response("Maintenance schedule created successfully")
@@ -165,7 +166,7 @@ def create_flagged_content():
     status = flagged_data['status']
 
     query = '''
-        INSERT INTO content_flag (reason, status)
+        INSERT INTO ContentFlag (reason, status)
         VALUES (%s, %s)
     '''
     cursor = db.get_db().cursor()
@@ -184,19 +185,19 @@ def update_maintenance_schedule(maintenance_id):
     current_app.logger.info(maintenance_data)
 
     description = maintenance_data.get('description')
-    start_time = maintenance_data.get('start_time')
-    end_time = maintenance_data.get('end_time')
-    scheduled_by = maintenance_data.get('scheduled_by')
+    start_time = maintenance_data.get('startTime')
+    end_time = maintenance_data.get('endTime')
+    performed_by = maintenance_data.get('performedBy')
 
     updates = []
     if description:
         updates.append("description = %s")
     if start_time:
-        updates.append("start_time = %s")
+        updates.append("startTime = %s")
     if end_time:
-        updates.append("end_time = %s")
-    if scheduled_by:
-        updates.append("scheduled_by = %s")
+        updates.append("endTime = %s")
+    if performed_by:
+        updates.append("performedBy = %s")
 
     if not updates:
         response = make_response("No fields provided for update")
@@ -204,14 +205,16 @@ def update_maintenance_schedule(maintenance_id):
         return response
 
     query = f'''
-        UPDATE maintenance
+        UPDATE Maintenance
         SET {', '.join(updates)}
-        WHERE maintenance_id = %s
+        WHERE maintenanceID = %s
     '''
-    cursor = db.get_db().cursor()
-    params = [value for value in (description, start_time, end_time, scheduled_by) if value]
+    params = [value for value in (description, start_time, end_time, performed_by) if value]
     params.append(maintenance_id)
+    cursor = db.get_db().cursor()
     cursor.execute(query, params)
     db.get_db().commit()
 
     response = make_response(f"Maintenance schedule {maintenance_id} updated successfully")
+    response.status_code = 200
+    return response
