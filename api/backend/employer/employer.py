@@ -126,8 +126,24 @@ def delete_employer(employer_id):
 @employer.route('/students', methods=['GET'])
 def get_students():
     query = '''
-        SELECT studentID, major, admitYear FROM Student
-        '''
+        SELECT
+            User.userID,
+            User.email,
+            User.phoneNum,
+            User.firstName,
+            User.lastName,
+            Student.major,
+            Student.admitYear,
+            GROUP_CONCAT(Skill.name) AS skills
+        FROM
+            User
+        INNER JOIN
+            Student ON User.userID = Student.userID
+        LEFT JOIN
+            Skill ON Student.studentID = Skill.studentID
+        GROUP BY
+            User.userID, User.email, User.phoneNum, User.firstName, User.lastName, Student.major, Student.admitYear;'''
+    
     cursor = db.get_db().cursor()
     cursor.execute(query)
     theData = cursor.fetchall()
