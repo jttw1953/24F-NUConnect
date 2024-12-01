@@ -123,13 +123,22 @@ def get_security_logs():
 def get_performance_metrics():
     cursor = db.get_db().cursor()
     cursor.execute('''
-        SELECT metricID, accessedBy, serverTime, responseTime, memoryUsage, cpuUsage
-        FROM PerformanceMetrics
+        SELECT 
+            pm.metricID, 
+            pm.accessedBy, 
+            u.username, 
+            pm.serverTime, 
+            pm.responseTime, 
+            pm.memoryUsage, 
+            pm.cpuUsage
+        FROM PerformanceMetrics pm
+        LEFT JOIN User u ON pm.accessedBy = u.userID
     ''')
     metrics = cursor.fetchall()
     the_response = make_response(jsonify(metrics))
     the_response.status_code = 200
     return the_response
+
 
 #------------------------------------------------------------
 # POST a new maintenance schedule

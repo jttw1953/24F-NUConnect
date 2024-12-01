@@ -768,80 +768,47 @@ INSERT INTO `SecurityLog` (logID, actionType, userID, timestamp, status) VALUES 
 INSERT INTO `SecurityLog` (logID, actionType, userID, timestamp, status) VALUES (40, 'login attempt', 7, '2024-03-26 22:20:40', 'success');
 
 -- Sample Data for SystemAlert Table
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (1, 'warning', NULL, 'Wife million really concern compare. Toward well despite pull issue.
-Mother play present age. Third large few child wrong.', '2024-01-14 11:59:49', 'active', 4, 88);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (2, 'error', NULL, 'Six rest head production city. Hospital information worry identify already often. You management position.
-Analysis poor newspaper question. Material money mouth whose center when lead event.', '2024-01-22 13:00:30', 'resolved', 24, 124);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (3, 'error', NULL, 'Voice put feel pass common scientist church. Number particularly material down before. First speech peace open among from question.', '2024-05-03 07:29:51', 'resolved', 19, 117);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (4, 'error', NULL, 'Itself language smile forget military. Fund push yet lose professional data.
-Her charge rich us hospital into. Something suddenly person but system offer.', '2024-05-24 07:23:32', 'active', 1, 33);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (5, 'error', NULL, 'Term fight friend above smile avoid nation east. Good center nor side out. Best religious arrive serious eye third. Manage today large sell worker.', '2024-09-02 01:53:30', 'resolved', 18, 31);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (6, 'warning', NULL, 'Past ball physical human natural that. Possible improve mother sound color crime.
-Town condition defense before pattern. Parent major pressure.', '2024-05-15 14:00:52', 'resolved', 3, 21);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (7, 'warning', NULL, 'Parent future history couple forget. Open wait word.
-Window turn kind instead. Our real also. Hand mind state trouble without. Third deal once reality yeah natural.', '2024-08-12 09:53:27', 'resolved', 32, 129);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (8, 'error', NULL, 'Response speak indicate teach evening. Maybe provide number woman others option player represent. You play issue organization.
-Decide produce each approach. Dog part consider central unit fight.', '2024-09-12 23:02:01', 'resolved', 40, 50);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (9, 'error', NULL, 'Various same phone billion. Listen after baby focus.
-Natural care since artist think board.
-Worker strategy teach interest thus. Seat last push party year. Time bill cost keep laugh produce.', '2024-10-30 07:10:51', 'active', 29, 34);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (10, 'error', NULL, 'Cut charge vote shake trouble. Yet federal wall tonight far others door.
-One development foot lot. Land use write three mouth.', '2024-09-27 23:07:38', 'active', 6, 124);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (11, 'error', NULL, 'Work live painting. Possible once material nation with quality box.
-Writer loss there true. Machine hotel beat wind. Myself same consider daughter consider west another.', '2024-07-01 18:39:13', 'active', 20, 131);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (12, 'error', NULL, 'Notice but that outside her his. Forget simply wait stage fall.
-About clear think face worker.
-Not cover to federal interest. Heart if majority. Yeah after live our economic.', '2024-02-27 20:38:36', 'active', 3, 98);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (13, 'warning', NULL, 'Clear than treatment story.
-Pass free factor body. Now admit still score blood begin door. Enter support heavy why.', '2024-06-14 08:35:08', 'resolved', 6, 16);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (14, 'error', NULL, 'Into example all point a case red. Sort receive news. Truth admit as many grow left dog send.
-Heavy official lawyer general section account look. Always economy agent hear couple kid.', '2024-06-23 21:41:44', 'active', 11, 9);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (15, 'error', NULL, 'Later idea to imagine partner great help. World impact quite last wrong.
-Card would whose international. Get area hear political treatment else policy third.', '2024-07-12 14:59:27', 'active', 14, 118);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (16, 'warning', NULL, 'Size outside political within many each choice.
-Language success finish local energy vote media. Race data word skill meet dark. Room management be.
-Movement floor best stock threat.', '2024-03-11 01:40:13', 'active', 16, 34);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (17, 'warning', NULL, 'Raise at computer indicate simply. Single fact edge since.
-Fine thought think campaign over begin impact. Book hit approach.', '2024-10-12 15:47:40', 'active', 23, 23);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (18, 'error', NULL, 'Toward paper dog ok low. Expect appear war approach walk home large.', '2024-10-01 16:09:26', 'active', 3, 57);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (19, 'warning', NULL, 'From since travel speak.
-For describe song over. Yeah daughter during company quickly. Wall bed skin dark deep similar.
-Now citizen speech medical final. Anyone under prove peace trip east single.', '2024-09-30 02:46:39', 'active', 28, 83);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (20, 'warning', NULL, 'Control TV do own past its week. Push art put career.
-Heart ask score thought. Physical law lose choice.', '2024-04-30 17:04:24', 'resolved', 29, 72);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (21, 'error', NULL, 'Special attention four coach appear. Pressure kind attorney should lot need material. Analysis population discussion research though.', '2024-09-24 14:46:19', 'resolved', 40, 24);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (22, 'error', NULL, 'Perform show return window speak national increase wonder. Economic smile break hard bag six. Beat evening decade see.
-Outside education land fact ball. Knowledge impact indeed smile natural.', '2024-07-31 04:55:43', 'resolved', 40, 72);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (23, 'warning', NULL, 'Garden color north president. Because common law begin. Suffer fund decide about appear.
-Writer month kitchen too tax share spring. Republican appear blue place room catch.', '2024-04-01 13:38:43', 'resolved', 29, 86);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (24, 'error', NULL, 'Hundred of heavy Democrat. Former six cultural. Boy skill health others shoulder benefit though role.
-Item crime government present compare. Fine economic effort issue reason.', '2024-09-07 07:14:10', 'resolved', 20, 84);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (25, 'warning', NULL, 'Carry staff perform recently quite indicate on. Agent light political car first field so character. Study full build. Play build teacher here.', '2024-02-25 06:35:06', 'resolved', 2, 82);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (26, 'warning', NULL, 'Return what give door chance. Piece any consumer Mrs entire.
-Risk service evidence wish note order light. Soldier often director play since. Cover determine recently ok senior able.', '2024-10-13 09:04:19', 'resolved', 10, 5);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (27, 'error', NULL, 'Fight talk wrong key reveal. Poor here give industry father. Assume turn according eat.
-Happy head write heavy always law.', '2024-05-12 22:06:46', 'resolved', 6, 43);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (28, 'warning', NULL, 'Seat model campaign only understand or.
-Computer take ok couple quite star. Big it experience everything Democrat during less.
-Measure hospital sense. About guy company son draw town.', '2024-08-24 09:22:22', 'resolved', 22, 116);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (29, 'warning', NULL, 'To that long exactly say. Black around become different evening. Throughout many bank plant box.', '2024-05-01 22:44:20', 'resolved', 29, 134);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (30, 'error', NULL, 'Allow within family. Notice guy institution likely.
-Series close idea of magazine they. Rock analysis local girl structure pay way team. Simple sign if some occur.', '2024-08-02 12:25:42', 'active', 37, 85);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (31, 'warning', NULL, 'Instead administration write race establish movement. Mrs character institution guess provide. Line style want.', '2024-05-14 15:37:52', 'active', 1, 105);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (32, 'error', NULL, 'Design accept building before. Key different change sea task east.
-Value voice effort notice. Able now yes at evidence. Window energy peace bring who now difficult growth.', '2024-05-03 15:00:03', 'active', 24, 11);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (33, 'error', NULL, 'Know growth camera rock democratic herself. Around personal likely your them big.
-Health system either vote. Professor recent fire my must model attorney.', '2024-04-16 04:56:20', 'active', 23, 93);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (34, 'error', NULL, 'Social sister his suffer radio score. Scene sense step television arm become last. Bit pattern education want.', '2024-02-16 08:05:29', 'resolved', 28, 71);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (35, 'error', NULL, 'Magazine record along article six section able. Recent one sign item prove strong. Young point back score thank.', '2024-08-19 02:42:36', 'active', 30, 31);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (36, 'warning', NULL, 'Anyone cup market catch a happy reality.
-Go difference onto behavior agency. Maintain few throughout remain. Art Republican store list suggest offer society.', '2024-05-29 23:18:40', 'resolved', 25, 135);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (37, 'warning', NULL, 'Man both break most fight mouth. Black sea hair son affect painting charge. Development report drug read.
-Dog between look in actually similar condition idea. Still fear his spend.', '2024-07-19 20:30:40', 'resolved', 4, 119);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (38, 'warning', NULL, 'Sign as view. Beyond chance list idea. Head soldier hit score voice head.
-Day sort able keep about attack. Race right case office. Good protect country product.', '2024-07-28 04:01:06', 'resolved', 22, 81);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (39, 'warning', NULL, 'Detail outside relationship vote character west hard. How another any someone its recently site. Significant likely lot notice.', '2024-01-07 05:58:57', 'active', 3, 80);
-INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES (40, 'error', NULL, 'Anything his bar film news. Arm idea draw media thank ok trouble. Notice a maintain wonder issue full.', '2024-06-12 10:13:41', 'resolved', 2, 136);
+INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES 
+(1, 'warning', NULL, 'System update required due to performance issues.', '2024-01-14 11:59:49', 'active', 41, 88),
+(2, 'error', NULL, 'Database connection timeout during backup.', '2024-01-22 13:00:30', 'resolved', 42, 124),
+(3, 'error', NULL, 'Unauthorized access attempt detected.', '2024-05-03 07:29:51', 'resolved', 43, 117),
+(4, 'error', NULL, 'Critical security vulnerability discovered.', '2024-05-24 07:23:32', 'active', 44, 33),
+(5, 'error', NULL, 'Failed login attempts exceeded limit.', '2024-09-02 01:53:30', 'resolved', 45, 31),
+(6, 'warning', NULL, 'Server load nearing critical levels.', '2024-05-15 14:00:52', 'resolved', 46, 21),
+(7, 'warning', NULL, 'Scheduled maintenance pending approval.', '2024-08-12 09:53:27', 'resolved', 47, 129),
+(8, 'error', NULL, 'Data integrity issue in user records.', '2024-09-12 23:02:01', 'resolved', 48, 50),
+(9, 'error', NULL, 'High latency detected in API response times.', '2024-10-30 07:10:51', 'active', 49, 34),
+(10, 'error', NULL, 'Disk space critically low on server.', '2024-09-27 23:07:38', 'active', 50, 124),
+(11, 'error', NULL, 'Memory leak detected in application process.', '2024-07-01 18:39:13', 'active', 51, 131),
+(12, 'error', NULL, 'Session timeout settings not enforced.', '2024-02-27 20:38:36', 'active', 52, 98),
+(13, 'warning', NULL, 'Pending approvals for user account deletions.', '2024-06-14 08:35:08', 'resolved', 53, 16),
+(14, 'error', NULL, 'Malware detected in system scan.', '2024-06-23 21:41:44', 'active', 54, 9),
+(15, 'error', NULL, 'Inconsistent audit trail logs.', '2024-07-12 14:59:27', 'active', 55, 118),
+(16, 'warning', NULL, 'Software updates available for deployment.', '2024-03-11 01:40:13', 'active', 56, 34),
+(17, 'warning', NULL, 'Invalid file uploads detected.', '2024-10-12 15:47:40', 'active', 57, 23),
+(18, 'error', NULL, 'Service-level agreement violations logged.', '2024-10-01 16:09:26', 'active', 58, 57),
+(19, 'warning', NULL, 'New security policies need user consent.', '2024-09-30 02:46:39', 'active', 59, 83),
+(20, 'warning', NULL, 'Potential data breach investigation initiated.', '2024-04-30 17:04:24', 'resolved', 60, 72),
+(21, 'error', NULL, 'System processes exceeding memory thresholds.', '2024-05-14 15:37:52', 'active', 61, 105),
+(22, 'error', NULL, 'Unauthorized changes to system configurations.', '2024-05-03 15:00:03', 'active', 62, 11),
+(23, 'error', NULL, 'API authentication failed for external service.', '2024-04-16 04:56:20', 'active', 63, 93),
+(24, 'error', NULL, 'High number of orphaned database entries.', '2024-02-16 08:05:29', 'resolved', 64, 71),
+(25, 'warning', NULL, 'User accounts with expired credentials found.', '2024-08-19 02:42:36', 'active', 65, 31),
+(26, 'warning', NULL, 'Irregular login times for specific accounts.', '2024-05-29 23:18:40', 'resolved', 66, 135),
+(27, 'warning', NULL, 'Unusual spike in user registration activity.', '2024-07-19 20:30:40', 'resolved', 67, 119),
+(28, 'warning', NULL, 'Software dependency updates required.', '2024-07-28 04:01:06', 'resolved', 68, 81),
+(29, 'warning', NULL, 'Malicious activity reported by threat detection.', '2024-01-07 05:58:57', 'active', 69, 80),
+(30, 'error', NULL, 'Failed transaction records in payment system.', '2024-06-12 10:13:41', 'resolved', 70, 136),
+(31, 'warning', NULL, 'Server response rates are slower than expected.', '2024-04-30 17:04:24', 'resolved', 71, 86),
+(32, 'error', NULL, 'Connection issues with third-party API.', '2024-04-30 17:04:24', 'resolved', 72, 72),
+(33, 'warning', NULL, 'Excessive API calls detected from a single IP.', '2024-04-30 17:04:24', 'resolved', 73, 93),
+(34, 'error', NULL, 'Failed database replication.', '2024-04-30 17:04:24', 'resolved', 74, 43),
+(35, 'warning', NULL, 'Suspicious changes in user account permissions.', '2024-04-30 17:04:24', 'resolved', 75, 57),
+(36, 'error', NULL, 'Cross-site scripting vulnerability identified.', '2024-04-30 17:04:24', 'resolved', 76, 13),
+(37, 'warning', NULL, 'Unoptimized query detected in analytics service.', '2024-04-30 17:04:24', 'resolved', 77, 50),
+(38, 'error', NULL, 'Critical bug in user authentication module.', '2024-04-30 17:04:24', 'resolved', 78, 34),
+(39, 'warning', NULL, 'Slow query execution in reporting database.', '2024-04-30 17:04:24', 'resolved', 79, 67),
+(40, 'warning', NULL, 'Deprecated APIs still in use by third-party systems.', '2024-04-30 17:04:24', 'resolved', 80, 39);
 
 -- Sample Data for PerformanceMetrics Table
 INSERT INTO `PerformanceMetrics` (metricID, accessedBy, serverTime, responseTime, timestamp, memoryUsage, cpuUsage) VALUES (1, 25, 303, 149, '2024-11-12 06:10:04', 309, 13);
