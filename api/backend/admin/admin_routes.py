@@ -339,3 +339,30 @@ def get_forum_discussions():
     response = jsonify(discussions)
     response.status_code = 200
     return response
+
+@admin.route('/admins/<int:user_id>', methods=['GET'])
+def get_admin_profile(user_id):
+    query = """
+        SELECT
+            User.userID,
+            User.firstName,
+            User.lastName,
+            User.email,
+            User.phoneNum,
+            User.registrationDate,
+            'admin' AS role
+        FROM
+            User
+        INNER JOIN
+            Admin ON User.userID = Admin.userID
+        WHERE
+            User.role = 'admin' AND User.userID = %s;
+    """
+    cursor = db.get_db().cursor()
+    cursor.execute(query, (user_id,))
+    result = cursor.fetchone()
+    
+    if result:
+        return make_response(jsonify(result), 200)
+    else:
+        return make_response({"error": f"Admin with User ID {user_id} not found."}, 404)

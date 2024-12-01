@@ -156,3 +156,29 @@ def get_employers():
     response = make_response(jsonify(theData))
     response.status_code = 200
     return response
+
+# return an analyst by userID
+@analyst.route('/analysts/<int:user_id>', methods=['GET'])
+def get_analyst_profile(user_id):
+    query = """
+        SELECT
+            User.userID,
+            User.firstName,
+            User.lastName,
+            User.email,
+            User.phoneNum,
+            User.registrationDate,
+            'analyst' AS role
+        FROM
+            User
+        WHERE
+            User.role = 'analyst' AND User.userID = %s;
+    """
+    cursor = db.get_db().cursor()
+    cursor.execute(query, (user_id,))
+    result = cursor.fetchone()
+    
+    if result:
+        return make_response(jsonify(result), 200)
+    else:
+        return make_response({"error": f"Analyst with User ID {user_id} not found."}, 404)

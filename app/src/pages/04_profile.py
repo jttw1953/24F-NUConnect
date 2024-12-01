@@ -41,5 +41,32 @@ elif role == "employer":
     else:
         st.error("Employer profile not found.")
 
+elif role == "analyst":
+    profile = requests.get(f"http://api:4000/analyst/analysts/{st.session_state['user id']}").json()
+    if profile:
+        st.subheader("Analyst Profile")
+        st.image(st.session_state['profile_pic'], width=150)
+        st.write(f"**Name**: {profile.get('firstName', 'N/A')} {profile.get('lastName', 'N/A')}")
+        st.write(f"**Email**: {profile.get('email', 'N/A')}")
+        st.write(f"**Phone Number**: {profile.get('phoneNum', 'N/A')}")
+        st.write(f"**Role Description**: Responsible for analyzing and reporting platform data.")
+        st.write(f"**Date Registered**: {profile.get('registrationDate', 'N/A')}")
+    else:
+        st.error("Analyst profile not found.")
+
+# Admin Profile
+elif role == "admin":
+    profile = requests.get(f"http://api:4000/ad/admins/{st.session_state['user id']}").json()
+    if profile:
+        st.subheader("Admin Profile")
+        st.image(st.session_state['profile_pic'], width=150)
+        st.write(f"**Name**: {profile.get('firstName', 'N/A')} {profile.get('lastName', 'N/A')}")
+        st.write(f"**Email**: {profile.get('email', 'N/A')}")
+        st.write(f"**Phone Number**: {profile.get('phoneNum', 'N/A')}")
+        st.write(f"**Role Description**: Platform administrator responsible for system maintenance and user management.")
+        st.write(f"**Date Registered**: {profile.get('registrationDate', 'N/A')}")
+    else:
+        st.error("Admin profile not found.")
+
 else:
     st.error("Invalid user role or user not found.")
