@@ -17,6 +17,7 @@ if role == "student":
     profile = requests.get(f"http://api:4000/emp/students/{st.session_state['user id']}").json()
     if profile:
         st.subheader("Student Profile")
+        st.image(st.session_state['profile_pic'], width=150)
         st.write(f"**Name**: {profile.get('firstName', 'N/A')} {profile.get('lastName', 'N/A')}")
         st.write(f"**Email**: {profile.get('email', 'N/A')}")
         st.write(f"**Phone Number**: {profile.get('phoneNum', 'N/A')}")
@@ -30,6 +31,7 @@ elif role == "employer":
     profile = requests.get(f"http://api:4000/emp/employers/{st.session_state['user id']}").json()
     if profile:
         st.subheader("Employer Profile")
+        st.image(st.session_state['profile_pic'], width=150)
         st.write(f"**Name**: {profile.get('firstName', 'N/A')} {profile.get('lastName', 'N/A')}")
         st.write(f"**Email**: {profile.get('email', 'N/A')}")
         st.write(f"**Phone Number**: {profile.get('phoneNum', 'N/A')}")
