@@ -227,46 +227,47 @@ INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VAL
 INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (40, 40, 'Engineering', 2023, 'Term film prove.', '2024-10-24 20:27:16');
 
 -- Sample Data for Skill Table
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (1, 'scene Skill', 'Property treat watch recognize air figure.', 11);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (2, 'Congress Skill', 'Even soon hot old away get.', 39);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (3, 'ahead Skill', 'Above no radio ten herself wait herself.', 12);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (4, 'shoulder Skill', 'Executive PM and respond lot out response happen wonder middle.', 2);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (5, 'particular Skill', 'Reason forward knowledge light activity can church product paper final important campaign.', 26);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (6, 'represent Skill', 'Father piece true customer your line.', 21);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (7, 'blood Skill', 'Son same response vote foreign church.', 9);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (8, 'audience Skill', 'Stay trouble so meeting several end live walk.', 33);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (9, 'red Skill', 'Smile who race smile race western house tonight loss dark.', 26);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (10, 'throughout Skill', 'Nature challenge also clearly source everything fact.', 19);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (11, 'card Skill', 'Continue stuff statement probably memory push help sell ground positive side most weight.', 16);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (12, 'game Skill', 'Admit test away born sit policy animal candidate road hospital star.', 30);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (13, 'sometimes Skill', 'May follow knowledge factor check poor born former professor.', 13);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (14, 'spend Skill', 'Yard tree their end father practice.', 40);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (15, 'drop Skill', 'Thousand product between per myself positive author teach above.', 2);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (16, 'fund Skill', 'Fast you rate professor experience fact worker for expert.', 21);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (17, 'thus Skill', 'Policy sometimes imagine light student third management interview under.', 8);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (18, 'drop Skill', 'Collection beat responsibility political bill west nor drug remain eye.', 3);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (19, 'world Skill', 'Blue federal but pass stock foreign which top.', 27);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (20, 'agree Skill', 'Ready also pay continue position name defense old director foreign.', 37);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (21, 'party Skill', 'Left man leg choice power bad network present simply season realize.', 32);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (22, 'high Skill', 'Time speak television brother similar receive lay year thus edge street wonder safe.', 16);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (23, 'impact Skill', 'Thousand tell great performance spring others member line step high performance view.', 9);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (24, 'relate Skill', 'Institution either better usually cold voice garden property require culture particular record.', 28);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (25, 'describe Skill', 'Successful song lawyer assume dream letter themselves any professional young animal.', 22);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (26, 'others Skill', 'West popular stock exist recent middle like situation beat pressure question.', 35);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (27, 'fish Skill', 'Play couple current they ready later.', 34);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (28, 'gun Skill', 'Camera source tonight though too quickly law over follow.', 36);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (29, 'war Skill', 'Off community professional ground thousand suddenly stand message certain particular money first dog.', 10);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (30, 'song Skill', 'Expect recent green far discuss program.', 1);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (31, 'adult Skill', 'Protect pass drop meet success chair.', 11);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (32, 'letter Skill', 'You light study performance pretty sound technology.', 14);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (33, 'especially Skill', 'Million but relationship join choose vote heart perform final culture poor.', 40);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (34, 'president Skill', 'Head continue finish course whose class education low visit at room structure.', 5);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (35, 'population Skill', 'Fund teacher fill reveal run light idea possible charge teach rather turn.', 4);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (36, 'exactly Skill', 'We necessary life central explain whatever.', 37);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (37, 'lose Skill', 'High meet method she establish cost trouble black.', 36);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (38, 'sense Skill', 'Foot eat stock improve arrive too brother air knowledge material stop especially.', 24);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (39, 'bag Skill', 'Purpose trade high series south dog trial only want notice.', 5);
-INSERT INTO `Skill` (skillID, name, description, studentID) VALUES (40, 'show Skill', 'Become film probably later too senior forward understand.', 10);
+INSERT INTO `Skill` (skillID, name, description, studentID) VALUES
+(1, 'C++ Programming', 'Proficient in developing software applications using C++.', 11),
+(2, 'Financial Modeling', 'Expertise in creating detailed financial models.', 39),
+(3, 'Graphic Design', 'Skilled in using Photoshop and Illustrator for creative projects.', 12),
+(4, 'Structural Analysis', 'Knowledgeable in analyzing and designing structural components.', 2),
+(5, 'Data Analysis', 'Experienced in handling large datasets and deriving insights.', 26),
+(6, 'Network Security', 'Proficient in implementing security protocols and firewalls.', 21),
+(7, 'Python Programming', 'Experienced in data processing and machine learning with Python.', 9),
+(8, '3D Modeling', 'Skilled in creating 3D models using tools like Blender.', 33),
+(9, 'Public Speaking', 'Strong ability to present ideas clearly and effectively.', 26),
+(10, 'Database Management', 'Experienced in SQL and managing relational databases.', 19),
+(11, 'Team Leadership', 'Effective in leading teams to achieve project goals.', 16),
+(12, 'Event Planning', 'Organized and executed multiple successful events.', 30),
+(13, 'Research Methodology', 'Experienced in academic and industrial research projects.', 13),
+(14, 'Project Management', 'Skilled in planning and executing projects within deadlines.', 40),
+(15, 'Machine Learning', 'Expertise in building and deploying ML models.', 2),
+(16, 'Cybersecurity', 'Proficient in detecting and mitigating cyber threats.', 21),
+(17, 'Cloud Computing', 'Experienced in working with AWS and Azure cloud services.', 8),
+(18, 'Embedded Systems', 'Knowledgeable in designing and programming embedded devices.', 3),
+(19, 'Photography', 'Skilled in professional photography and editing.', 27),
+(20, 'Robotics', 'Proficient in designing and programming robotic systems.', 37),
+(21, 'Algorithm Development', 'Strong skills in designing efficient algorithms.', 32),
+(22, 'Technical Writing', 'Experienced in creating user manuals and technical documentation.', 16),
+(23, 'Web Development', 'Skilled in building responsive websites using HTML, CSS, and JavaScript.', 9),
+(24, 'Social Media Management', 'Expertise in managing social media campaigns.', 28),
+(25, 'Business Analysis', 'Proficient in identifying business requirements and solutions.', 22),
+(26, 'Deep Learning', 'Experienced in implementing neural networks using TensorFlow.', 35),
+(27, 'Creative Writing', 'Published several short stories and articles.', 34),
+(28, 'UI/UX Design', 'Skilled in designing intuitive user interfaces.', 36),
+(29, 'Financial Planning', 'Experienced in creating financial plans and budgets.', 10),
+(30, 'Public Relations', 'Proficient in managing communication and public image.', 1),
+(31, 'Mobile App Development', 'Developed multiple Android and iOS applications.', 11),
+(32, 'Content Marketing', 'Skilled in creating engaging marketing content.', 14),
+(33, 'Game Development', 'Experience in building games using Unity and Unreal Engine.', 40),
+(34, 'Data Visualization', 'Proficient in using Tableau and Power BI for visualizations.', 5),
+(35, 'Mechanical Design', 'Skilled in CAD tools like SolidWorks and AutoCAD.', 4),
+(36, 'Software Testing', 'Expertise in testing and quality assurance processes.', 37),
+(37, 'Data Science', 'Experienced in predictive modeling and data mining.', 36),
+(38, 'Strategic Planning', 'Skilled in developing and executing business strategies.', 24),
+(39, 'Entrepreneurship', 'Founded and managed a successful startup.', 5),
+(40, 'Digital Marketing', 'Proficient in SEO and PPC advertising.', 10);
 
 -- Sample Data for Company Table
 INSERT INTO `Company` (companyID, name, industry, location) VALUES (1, 'Rios-Douglas', 'Finance', '47496 Lauren Place
@@ -769,46 +770,46 @@ INSERT INTO `SecurityLog` (logID, actionType, userID, timestamp, status) VALUES 
 
 -- Sample Data for SystemAlert Table
 INSERT INTO `SystemAlert` (alertID, alertType, typeID, description, timestamp, status, notifyAdmin, triggeredBy) VALUES 
-(1, 'warning', NULL, 'System update required due to performance issues.', '2024-01-14 11:59:49', 'active', 41, 88),
-(2, 'error', NULL, 'Database connection timeout during backup.', '2024-01-22 13:00:30', 'resolved', 42, 124),
-(3, 'error', NULL, 'Unauthorized access attempt detected.', '2024-05-03 07:29:51', 'resolved', 43, 117),
-(4, 'error', NULL, 'Critical security vulnerability discovered.', '2024-05-24 07:23:32', 'active', 44, 33),
-(5, 'error', NULL, 'Failed login attempts exceeded limit.', '2024-09-02 01:53:30', 'resolved', 45, 31),
-(6, 'warning', NULL, 'Server load nearing critical levels.', '2024-05-15 14:00:52', 'resolved', 46, 21),
-(7, 'warning', NULL, 'Scheduled maintenance pending approval.', '2024-08-12 09:53:27', 'resolved', 47, 129),
-(8, 'error', NULL, 'Data integrity issue in user records.', '2024-09-12 23:02:01', 'resolved', 48, 50),
-(9, 'error', NULL, 'High latency detected in API response times.', '2024-10-30 07:10:51', 'active', 49, 34),
-(10, 'error', NULL, 'Disk space critically low on server.', '2024-09-27 23:07:38', 'active', 50, 124),
-(11, 'error', NULL, 'Memory leak detected in application process.', '2024-07-01 18:39:13', 'active', 51, 131),
-(12, 'error', NULL, 'Session timeout settings not enforced.', '2024-02-27 20:38:36', 'active', 52, 98),
-(13, 'warning', NULL, 'Pending approvals for user account deletions.', '2024-06-14 08:35:08', 'resolved', 53, 16),
-(14, 'error', NULL, 'Malware detected in system scan.', '2024-06-23 21:41:44', 'active', 54, 9),
-(15, 'error', NULL, 'Inconsistent audit trail logs.', '2024-07-12 14:59:27', 'active', 55, 118),
-(16, 'warning', NULL, 'Software updates available for deployment.', '2024-03-11 01:40:13', 'active', 56, 34),
-(17, 'warning', NULL, 'Invalid file uploads detected.', '2024-10-12 15:47:40', 'active', 57, 23),
-(18, 'error', NULL, 'Service-level agreement violations logged.', '2024-10-01 16:09:26', 'active', 58, 57),
-(19, 'warning', NULL, 'New security policies need user consent.', '2024-09-30 02:46:39', 'active', 59, 83),
-(20, 'warning', NULL, 'Potential data breach investigation initiated.', '2024-04-30 17:04:24', 'resolved', 60, 72),
-(21, 'error', NULL, 'System processes exceeding memory thresholds.', '2024-05-14 15:37:52', 'active', 61, 105),
-(22, 'error', NULL, 'Unauthorized changes to system configurations.', '2024-05-03 15:00:03', 'active', 62, 11),
-(23, 'error', NULL, 'API authentication failed for external service.', '2024-04-16 04:56:20', 'active', 63, 93),
-(24, 'error', NULL, 'High number of orphaned database entries.', '2024-02-16 08:05:29', 'resolved', 64, 71),
-(25, 'warning', NULL, 'User accounts with expired credentials found.', '2024-08-19 02:42:36', 'active', 65, 31),
-(26, 'warning', NULL, 'Irregular login times for specific accounts.', '2024-05-29 23:18:40', 'resolved', 66, 135),
-(27, 'warning', NULL, 'Unusual spike in user registration activity.', '2024-07-19 20:30:40', 'resolved', 67, 119),
-(28, 'warning', NULL, 'Software dependency updates required.', '2024-07-28 04:01:06', 'resolved', 68, 81),
-(29, 'warning', NULL, 'Malicious activity reported by threat detection.', '2024-01-07 05:58:57', 'active', 69, 80),
-(30, 'error', NULL, 'Failed transaction records in payment system.', '2024-06-12 10:13:41', 'resolved', 70, 136),
-(31, 'warning', NULL, 'Server response rates are slower than expected.', '2024-04-30 17:04:24', 'resolved', 71, 86),
-(32, 'error', NULL, 'Connection issues with third-party API.', '2024-04-30 17:04:24', 'resolved', 72, 72),
-(33, 'warning', NULL, 'Excessive API calls detected from a single IP.', '2024-04-30 17:04:24', 'resolved', 73, 93),
-(34, 'error', NULL, 'Failed database replication.', '2024-04-30 17:04:24', 'resolved', 74, 43),
-(35, 'warning', NULL, 'Suspicious changes in user account permissions.', '2024-04-30 17:04:24', 'resolved', 75, 57),
-(36, 'error', NULL, 'Cross-site scripting vulnerability identified.', '2024-04-30 17:04:24', 'resolved', 76, 13),
-(37, 'warning', NULL, 'Unoptimized query detected in analytics service.', '2024-04-30 17:04:24', 'resolved', 77, 50),
-(38, 'error', NULL, 'Critical bug in user authentication module.', '2024-04-30 17:04:24', 'resolved', 78, 34),
-(39, 'warning', NULL, 'Slow query execution in reporting database.', '2024-04-30 17:04:24', 'resolved', 79, 67),
-(40, 'warning', NULL, 'Deprecated APIs still in use by third-party systems.', '2024-04-30 17:04:24', 'resolved', 80, 39);
+(1, 'warning', NULL, 'System update required due to performance issues.', '2024-01-14 11:59:49', 'active', 1, 88),
+(2, 'error', NULL, 'Database connection timeout during backup.', '2024-01-22 13:00:30', 'resolved', 2, 124),
+(3, 'error', NULL, 'Unauthorized access attempt detected.', '2024-05-03 07:29:51', 'resolved', 3, 117),
+(4, 'error', NULL, 'Critical security vulnerability discovered.', '2024-05-24 07:23:32', 'active', 4, 33),
+(5, 'error', NULL, 'Failed login attempts exceeded limit.', '2024-09-02 01:53:30', 'resolved', 5, 31),
+(6, 'warning', NULL, 'Server load nearing critical levels.', '2024-05-15 14:00:52', 'resolved', 6, 21),
+(7, 'warning', NULL, 'Scheduled maintenance pending approval.', '2024-08-12 09:53:27', 'resolved', 7, 129),
+(8, 'error', NULL, 'Data integrity issue in user records.', '2024-09-12 23:02:01', 'resolved', 8, 50),
+(9, 'error', NULL, 'High latency detected in API response times.', '2024-10-30 07:10:51', 'active', 9, 34),
+(10, 'error', NULL, 'Disk space critically low on server.', '2024-09-27 23:07:38', 'active', 10, 124),
+(11, 'error', NULL, 'Memory leak detected in application process.', '2024-07-01 18:39:13', 'active', 11, 131),
+(12, 'error', NULL, 'Session timeout settings not enforced.', '2024-02-27 20:38:36', 'active', 12, 98),
+(13, 'warning', NULL, 'Pending approvals for user account deletions.', '2024-06-14 08:35:08', 'resolved', 13, 16),
+(14, 'error', NULL, 'Malware detected in system scan.', '2024-06-23 21:41:44', 'active', 14, 9),
+(15, 'error', NULL, 'Inconsistent audit trail logs.', '2024-07-12 14:59:27', 'active', 15, 118),
+(16, 'warning', NULL, 'Software updates available for deployment.', '2024-03-11 01:40:13', 'active', 16, 34),
+(17, 'warning', NULL, 'Invalid file uploads detected.', '2024-10-12 15:47:40', 'active', 17, 23),
+(18, 'error', NULL, 'Service-level agreement violations logged.', '2024-10-01 16:09:26', 'active', 18, 57),
+(19, 'warning', NULL, 'New security policies need user consent.', '2024-09-30 02:46:39', 'active', 19, 83),
+(20, 'warning', NULL, 'Potential data breach investigation initiated.', '2024-04-30 17:04:24', 'resolved', 20, 72),
+(21, 'error', NULL, 'System processes exceeding memory thresholds.', '2024-05-14 15:37:52', 'active', 21, 105),
+(22, 'error', NULL, 'Unauthorized changes to system configurations.', '2024-05-03 15:00:03', 'active', 22, 11),
+(23, 'error', NULL, 'API authentication failed for external service.', '2024-04-16 04:56:20', 'active', 23, 93),
+(24, 'error', NULL, 'High number of orphaned database entries.', '2024-02-16 08:05:29', 'resolved', 24, 71),
+(25, 'warning', NULL, 'User accounts with expired credentials found.', '2024-08-19 02:42:36', 'active', 25, 31),
+(26, 'warning', NULL, 'Irregular login times for specific accounts.', '2024-05-29 23:18:40', 'resolved', 26, 135),
+(27, 'warning', NULL, 'Unusual spike in user registration activity.', '2024-07-19 20:30:40', 'resolved', 27, 119),
+(28, 'warning', NULL, 'Software dependency updates required.', '2024-07-28 04:01:06', 'resolved', 28, 81),
+(29, 'warning', NULL, 'Malicious activity reported by threat detection.', '2024-01-07 05:58:57', 'active', 29, 80),
+(30, 'error', NULL, 'Failed transaction records in payment system.', '2024-06-12 10:13:41', 'resolved', 30, 136),
+(31, 'warning', NULL, 'Server response rates are slower than expected.', '2024-04-30 17:04:24', 'resolved', 31, 86),
+(32, 'error', NULL, 'Connection issues with third-party API.', '2024-04-30 17:04:24', 'resolved', 32, 72),
+(33, 'warning', NULL, 'Excessive API calls detected from a single IP.', '2024-04-30 17:04:24', 'resolved', 33, 93),
+(34, 'error', NULL, 'Failed database replication.', '2024-04-30 17:04:24', 'resolved', 34, 43),
+(35, 'warning', NULL, 'Suspicious changes in user account permissions.', '2024-04-30 17:04:24', 'resolved', 35, 57),
+(36, 'error', NULL, 'Cross-site scripting vulnerability identified.', '2024-04-30 17:04:24', 'resolved', 36, 13),
+(37, 'warning', NULL, 'Unoptimized query detected in analytics service.', '2024-04-30 17:04:24', 'resolved', 37, 50),
+(38, 'error', NULL, 'Critical bug in user authentication module.', '2024-04-30 17:04:24', 'resolved', 38, 34),
+(39, 'warning', NULL, 'Slow query execution in reporting database.', '2024-04-30 17:04:24', 'resolved', 39, 67),
+(40, 'warning', NULL, 'Deprecated APIs still in use by third-party systems.', '2024-04-30 17:04:24', 'resolved', 40, 39);
 
 -- Sample Data for PerformanceMetrics Table
 INSERT INTO `PerformanceMetrics` (metricID, accessedBy, serverTime, responseTime, timestamp, memoryUsage, cpuUsage) VALUES (1, 25, 303, 149, '2024-11-12 06:10:04', 309, 13);
@@ -853,88 +854,90 @@ INSERT INTO `PerformanceMetrics` (metricID, accessedBy, serverTime, responseTime
 INSERT INTO `PerformanceMetrics` (metricID, accessedBy, serverTime, responseTime, timestamp, memoryUsage, cpuUsage) VALUES (40, 4, 291, 164, '2024-06-27 01:07:50', 121, 39);
 
 -- Sample Data for Maintenance Table
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (1, 24, 'completed', '2024-08-11 13:33:14', '2024-04-21 06:55:18', 'Can win less task environment hospital.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (2, 33, 'completed', '2024-04-15 10:15:36', '2024-08-16 20:29:21', 'Break instead senior student sport society difficult.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (3, 23, 'in progress', '2024-04-09 13:48:17', '2024-06-05 09:58:24', 'Tough capital guess nearly.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (4, 22, 'in progress', '2024-04-08 04:02:22', '2024-05-28 11:18:16', 'Group above out production issue.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (5, 36, 'in progress', '2024-03-23 07:48:35', '2024-09-28 12:59:12', 'Sometimes whom officer happy food magazine strong.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (6, 22, 'completed', '2024-06-28 12:25:57', '2024-09-12 04:14:09', 'Change tax fear success.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (7, 32, 'in progress', '2024-01-24 06:24:16', '2024-08-10 21:43:35', 'Morning give school see despite entire.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (8, 15, 'in progress', '2024-10-23 22:06:53', '2024-06-10 01:39:57', 'Change next know draw.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (9, 14, 'completed', '2024-07-25 01:10:51', '2024-03-28 08:23:42', 'Model mission animal easy factor to usually.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (10, 11, 'completed', '2024-01-31 11:47:56', '2024-04-02 00:02:07', 'Provide daughter animal decade recognize final without.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (11, 34, 'completed', '2024-10-15 08:07:59', '2024-04-10 07:38:04', 'Speak mind side fall.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (12, 17, 'in progress', '2024-11-09 03:04:33', '2024-11-16 14:55:55', 'Bag sport risk base.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (13, 23, 'completed', '2024-09-26 07:10:39', '2024-11-06 07:54:07', 'By last authority.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (14, 8, 'in progress', '2024-09-04 13:02:10', '2024-11-05 18:08:19', 'Attack use half.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (15, 2, 'in progress', '2024-04-26 14:12:40', '2024-07-29 15:48:53', 'Book building science.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (16, 19, 'in progress', '2024-02-25 07:35:50', '2024-07-29 06:47:50', 'Build recent son front strong situation agree.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (17, 35, 'completed', '2024-04-27 16:01:59', '2024-08-22 04:44:44', 'Success stock be but leader worker.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (18, 22, 'completed', '2024-04-03 15:10:12', '2024-07-23 03:16:08', 'Usually state hand off sign.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (19, 24, 'completed', '2024-01-10 20:12:29', '2024-01-26 16:51:11', 'Respond year product employee meet medical heavy.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (20, 16, 'completed', '2024-01-22 08:16:53', '2024-02-05 03:03:26', 'Science relationship understand history effort sell tough.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (21, 23, 'in progress', '2024-01-22 21:32:29', '2024-02-20 04:54:17', 'Hand involve I.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (22, 38, 'in progress', '2024-09-25 13:17:32', '2024-07-12 09:03:53', 'Someone model western create star.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (23, 24, 'in progress', '2024-04-29 20:58:20', '2024-10-20 22:26:03', 'I state window easy billion.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (24, 2, 'completed', '2024-04-30 09:07:30', '2024-05-24 06:35:16', 'Employee once suggest citizen.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (25, 27, 'completed', '2024-07-15 22:46:33', '2024-04-13 09:56:41', 'Able I concern recognize sit try part.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (26, 28, 'in progress', '2024-06-28 00:58:54', '2024-08-09 10:31:11', 'Tonight only attention point.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (27, 2, 'in progress', '2024-01-19 07:57:58', '2024-05-11 08:28:18', 'Trip rest many heavy material.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (28, 6, 'in progress', '2024-05-16 20:08:59', '2024-04-06 01:23:36', 'About camera for occur west.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (29, 17, 'completed', '2024-11-20 09:58:38', '2024-06-20 03:28:08', 'Apply career almost least article page.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (30, 39, 'in progress', '2024-08-04 22:04:20', '2024-10-11 05:43:45', 'Ball audience decision Republican start speak know.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (31, 40, 'in progress', '2024-07-12 21:45:28', '2024-10-01 09:24:01', 'Movement town wrong wonder past.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (32, 29, 'in progress', '2024-01-10 11:29:50', '2024-02-18 11:17:16', 'Machine lead letter themselves attorney these fear.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (33, 33, 'completed', '2024-08-23 07:29:07', '2024-07-23 01:07:48', 'Economy culture soldier color.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (34, 7, 'in progress', '2024-09-23 03:28:25', '2024-07-19 19:32:22', 'Where here also not we wife serious.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (35, 27, 'in progress', '2024-06-12 20:39:14', '2024-01-18 00:35:25', 'Weight during along loss.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (36, 33, 'completed', '2024-01-28 08:22:58', '2024-06-17 06:16:34', 'Board these event two task.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (37, 16, 'completed', '2024-05-18 17:17:00', '2024-04-21 09:45:01', 'Travel play remain meeting see garden day as.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (38, 31, 'in progress', '2024-05-27 17:29:48', '2024-01-07 21:23:46', 'Experience by ten.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (39, 30, 'in progress', '2024-03-17 08:50:46', '2024-09-21 01:26:05', 'Language decision explain tough Republican practice teacher.');
-INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES (40, 10, 'in progress', '2024-07-25 02:25:51', '2024-02-05 13:47:29', 'Network field as couple cost begin today.');
+INSERT INTO `Maintenance` (maintenanceID, performedBy, status, startTime, endTime, description) VALUES 
+(1, 1, 'completed', '2024-01-15 09:14:00', '2024-01-22 13:23:10', 'Routine server checkup completed successfully.'),
+(2, 2, 'completed', '2024-02-10 14:15:45', '2024-02-17 08:47:35', 'Database backup and archival.'),
+(3, 3, 'in progress', '2024-03-05 11:30:20', '2024-03-10 16:50:45', 'Software patch update ongoing.'),
+(4, 4, 'completed', '2024-03-20 09:00:00', '2024-03-25 14:35:00', 'Network performance optimization.'),
+(5, 5, 'in progress', '2024-04-12 08:40:50', '2024-04-20 18:30:00', 'Firewall configuration enhancement.'),
+(6, 6, 'completed', '2024-05-01 10:20:15', '2024-05-03 12:50:25', 'Completed server OS upgrade.'),
+(7, 7, 'in progress', '2024-05-10 09:30:00', '2024-05-18 16:10:00', 'Building new server clusters.'),
+(8, 8, 'completed', '2024-06-01 14:00:00', '2024-06-05 20:45:30', 'System diagnostics run.'),
+(9, 9, 'in progress', '2024-07-01 08:10:00', '2024-07-15 18:20:00', 'Enhanced data encryption measures.'),
+(10, 10, 'completed', '2024-07-20 11:00:00', '2024-07-22 14:45:00', 'Security system audit completed.'),
+(11, 11, 'completed', '2024-08-02 10:15:00', '2024-08-10 16:30:00', 'Backup servers deployed.'),
+(12, 12, 'in progress', '2024-08-15 07:50:00', '2024-08-25 20:00:00', 'Legacy systems replacement in progress.'),
+(13, 13, 'completed', '2024-09-05 09:45:00', '2024-09-10 18:25:00', 'Routine maintenance tasks finalized.'),
+(14, 14, 'in progress', '2024-09-12 11:30:00', '2024-09-22 15:10:00', 'Conducting hardware upgrades.'),
+(15, 15, 'completed', '2024-10-01 09:10:00', '2024-10-05 14:30:00', 'Data redundancy mechanisms installed.'),
+(16, 16, 'in progress', '2024-10-15 08:30:00', '2024-10-25 19:30:00', 'Server relocation in progress.'),
+(17, 17, 'completed', '2024-11-01 09:00:00', '2024-11-03 15:30:00', 'Cloud server sync completed.'),
+(18, 18, 'in progress', '2024-11-10 10:00:00', '2024-11-20 17:45:00', 'Updating remote access protocols.'),
+(19, 19, 'completed', '2024-11-15 08:00:00', '2024-11-17 20:00:00', 'Firewall breach testing finalized.'),
+(20, 20, 'completed', '2024-12-01 10:10:00', '2024-12-05 18:30:00', 'Database migration completed.'),
+(21, 21, 'completed', '2024-12-10 08:40:00', '2024-12-15 19:10:00', 'Scheduled power maintenance.'),
+(22, 22, 'in progress', '2024-12-20 10:30:00', '2024-12-25 22:10:00', 'Conducting disaster recovery drills.'),
+(23, 23, 'completed', '2024-12-28 09:20:00', '2025-01-05 17:00:00', 'System cooling tests completed.'),
+(24, 24, 'completed', '2025-01-12 11:00:00', '2025-01-15 15:20:00', 'Operational audit finalized.'),
+(25, 25, 'completed', '2025-01-20 08:15:00', '2025-01-25 16:30:00', 'Server firmware updates applied.'),
+(26, 26, 'in progress', '2025-02-01 10:00:00', '2025-02-10 19:45:00', 'Installing new monitoring software.'),
+(27, 27, 'completed', '2025-02-15 07:30:00', '2025-02-20 18:30:00', 'Server clustering completed.'),
+(28, 28, 'completed', '2025-03-01 10:30:00', '2025-03-10 16:40:00', 'Routine system updates applied.'),
+(29, 29, 'in progress', '2025-03-15 09:20:00', '2025-03-20 14:30:00', 'Conducting performance benchmarks.'),
+(30, 30, 'completed', '2025-03-25 11:00:00', '2025-03-30 18:10:00', 'Network realignment completed.'),
+(31, 31, 'in progress', '2025-04-05 09:40:00', '2025-04-15 19:00:00', 'Updating user permissions.'),
+(32, 32, 'completed', '2025-04-20 10:00:00', '2025-04-25 18:15:00', 'Data access control improved.'),
+(33, 33, 'in progress', '2025-05-01 11:00:00', '2025-05-10 17:20:00', 'Deploying advanced threat detection.'),
+(34, 34, 'completed', '2025-05-15 10:30:00', '2025-05-20 14:50:00', 'Cloud systems optimized.'),
+(35, 35, 'completed', '2025-06-01 10:00:00', '2025-06-05 16:40:00', 'Emergency maintenance drill completed.'),
+(36, 36, 'in progress', '2025-06-10 08:50:00', '2025-06-20 20:10:00', 'Overhauling storage systems.'),
+(37, 37, 'completed', '2025-06-25 11:20:00', '2025-06-30 15:45:00', 'Core security modules updated.'),
+(38, 38, 'in progress', '2025-07-05 08:10:00', '2025-07-15 18:25:00', 'Legacy server decommissioning.'),
+(39, 39, 'completed', '2025-07-20 10:30:00', '2025-07-25 14:40:00', 'Cooling system maintenance finalized.'),
+(40, 40, 'completed', '2025-08-01 09:50:00', '2025-08-10 16:00:00', 'Completed full system diagnostics.');
 
 -- Sample Data for AuditLog Table
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (1, 30, 'update', '2024-06-08 16:30:29', 'Purpose most pressure green when field region notice impact difference.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (2, 34, 'update', '2024-01-04 08:19:18', 'Answer recently one defense again message painting.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (3, 32, 'delete', '2024-09-28 12:54:36', 'Son star room already ready story seven pretty wonder about painting.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (4, 39, 'delete', '2024-08-22 07:06:36', 'Garden idea much behind hotel quickly current war explain.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (5, 17, 'update', '2024-08-05 18:09:25', 'Meeting appear commercial always amount interview.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (6, 13, 'insert', '2024-09-14 12:18:20', 'Off should assume be make military hope couple reduce everything million.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (7, 36, 'update', '2024-05-19 15:00:34', 'Seek white successful fire new wind.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (8, 33, 'delete', '2024-05-05 21:36:41', 'Production today nearly than light color.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (9, 36, 'insert', '2024-04-12 10:17:35', 'Official through thank market black.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (10, 12, 'delete', '2024-11-08 07:33:15', 'Admit forward than democratic record.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (11, 6, 'update', '2024-01-30 00:02:00', 'Around city bring response west someone paper become test.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (12, 28, 'delete', '2024-07-28 17:28:35', 'Civil shoulder second another power surface make serve source.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (13, 35, 'update', '2024-04-06 09:15:57', 'Half determine your study produce laugh.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (14, 35, 'update', '2024-05-14 05:23:32', 'Discover morning very energy Mrs name.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (15, 21, 'delete', '2024-10-15 11:31:40', 'Pass enough you lose capital mind throw couple garden.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (16, 12, 'insert', '2024-08-12 08:32:26', 'Such not feel trouble game ago prevent service.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (17, 24, 'insert', '2024-10-30 22:59:54', 'Argue perhaps listen guy type even.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (18, 11, 'delete', '2024-06-29 14:02:49', 'Glass until rule other long son type year.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (19, 32, 'update', '2024-10-22 21:09:28', 'Son eight positive Mr team.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (20, 24, 'update', '2024-08-27 11:37:15', 'Trouble current smile ok effort around mean vote reveal.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (21, 5, 'insert', '2024-10-29 09:11:08', 'Board instead blood name bill thus team.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (22, 10, 'insert', '2024-09-03 01:59:49', 'Space team board Mrs activity kid.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (23, 37, 'insert', '2024-08-04 22:57:26', 'Tv foot author own toward.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (24, 39, 'delete', '2024-05-04 14:08:44', 'Picture leader position believe.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (25, 39, 'delete', '2024-08-01 17:06:58', 'Whole age partner ten positive enough smile within.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (26, 32, 'insert', '2024-01-09 10:46:08', 'Miss focus artist task authority.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (27, 3, 'delete', '2024-02-11 12:21:30', 'Get shoulder system life season so.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (28, 26, 'delete', '2024-02-23 16:38:16', 'Suffer or risk every together performance list national.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (29, 18, 'delete', '2024-02-16 23:53:39', 'How toward note police bring wait art arm.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (30, 18, 'delete', '2024-08-23 09:17:20', 'Feel manager finally such agent.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (31, 29, 'update', '2024-07-11 09:47:01', 'As explain create fine they run floor beyond operation.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (32, 34, 'delete', '2024-10-16 20:07:49', 'Lose your trade indeed evening billion mouth arm edge single.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (33, 9, 'update', '2024-01-16 01:25:10', 'At everyone book eat especially ability blue however woman former.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (34, 9, 'insert', '2024-10-01 12:45:33', 'Begin continue idea hope police even together brother follow role.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (35, 15, 'update', '2024-11-14 08:26:22', 'Tax husband particular radio plan nice method office especially.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (36, 35, 'delete', '2024-07-22 04:26:32', 'Middle first in conference record oil now.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (37, 38, 'insert', '2024-06-08 00:24:27', 'Defense animal defense especially rate action become memory wrong bit.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (38, 28, 'delete', '2024-05-18 12:27:43', 'Improve church the experience matter early break pattern that.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (39, 39, 'delete', '2024-05-20 11:52:58', 'Boy agree break attention sing.');
-INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES (40, 23, 'update', '2024-01-17 04:10:56', 'Issue end discussion member ever condition.');
+INSERT INTO `AuditLog` (auditLogID, performedBy, actionType, timestamp, changes) VALUES 
+(1, 1, 'update', '2024-01-10 14:00:00', 'Modified user access levels for department X.'),
+(2, 2, 'delete', '2024-01-15 16:30:00', 'Removed inactive user accounts.'),
+(3, 3, 'insert', '2024-02-01 08:20:00', 'Added new database tables for analytics.'),
+(4, 4, 'update', '2024-02-15 12:30:00', 'Optimized query performance metrics.'),
+(5, 5, 'delete', '2024-03-01 09:10:00', 'Cleared outdated system logs.'),
+(6, 6, 'insert', '2024-03-15 14:20:00', 'Deployed new software update version 1.5.3.'),
+(7, 7, 'update', '2024-04-01 11:30:00', 'Upgraded security protocols.'),
+(8, 8, 'delete', '2024-04-10 15:40:00', 'Removed deprecated API endpoints.'),
+(9, 9, 'insert', '2024-05-01 13:20:00', 'Created new admin roles for department Y.'),
+(10, 10, 'update', '2024-05-15 10:30:00', 'Updated server hardware configurations.'),
+(11, 11, 'delete', '2024-06-01 12:50:00', 'Archived old project files.'),
+(12, 12, 'insert', '2024-06-20 08:30:00', 'Added new system notification features.'),
+(13, 13, 'update', '2024-07-01 09:40:00', 'Fixed system bug related to data export.'),
+(14, 14, 'delete', '2024-07-15 11:20:00', 'Removed test data from the live database.'),
+(15, 15, 'insert', '2024-08-01 08:10:00', 'Implemented real-time monitoring for servers.'),
+(16, 16, 'update', '2024-08-15 10:30:00', 'Adjusted backup schedules.'),
+(17, 17, 'delete', '2024-09-01 14:00:00', 'Purged logs older than 5 years.'),
+(18, 18, 'insert', '2024-09-10 11:30:00', 'Enabled multi-factor authentication.'),
+(19, 19, 'update', '2024-10-01 08:50:00', 'Updated firewall configurations.'),
+(20, 20, 'delete', '2024-10-15 13:20:00', 'Removed duplicate database entries.'),
+(21, 21, 'insert', '2024-11-01 09:30:00', 'Added new system alert types.'),
+(22, 22, 'update', '2024-11-15 10:40:00', 'Improved query efficiency for reports.'),
+(23, 23, 'delete', '2024-12-01 14:10:00', 'Cleared inactive user sessions.'),
+(24, 24, 'insert', '2024-12-10 11:00:00', 'Launched new user feedback module.'),
+(25, 25, 'update', '2024-12-20 10:30:00', 'Resolved data inconsistency issues.'),
+(26, 26, 'delete', '2025-01-01 13:20:00', 'Removed redundant files from the archive.'),
+(27, 27, 'insert', '2025-01-10 14:00:00', 'Enhanced audit logging mechanism.'),
+(28, 28, 'update', '2025-01-20 10:30:00', 'Modified admin privileges for department Z.'),
+(29, 29, 'delete', '2025-02-01 12:00:00', 'Removed obsolete configuration settings.'),
+(30, 30, 'insert', '2025-02-15 09:30:00', 'Added new database replication nodes.'),
+(31, 31, 'update', '2025-03-01 11:20:00', 'Improved error handling in logs.'),
+(32, 32, 'delete', '2025-03-10 13:30:00', 'Removed old backup copies from storage.'),
+(33, 33, 'insert', '2025-03-20 10:10:00', 'Deployed new server monitoring dashboard.'),
+(34, 34, 'update', '2025-04-01 12:00:00', 'Updated user password policies.'),
+(35, 35, 'delete', '2025-04-10 14:20:00', 'Archived completed maintenance schedules.'),
+(36, 36, 'insert', '2025-04-20 09:30:00', 'Introduced new data anonymization tools.'),
+(37, 37, 'update', '2025-05-01 11:10:00', 'Configured load balancer settings.'),
+(38, 38, 'delete', '2025-05-15 10:30:00', 'Removed inactive server logs.'),
+(39, 39, 'insert', '2025-05-30 08:40:00', 'Implemented automated system checks.'),
+(40, 40, 'update', '2025-06-01 14:10:00', 'Enhanced system logging accuracy.');
 
 -- Sample Data for UserDiscussions Table
 INSERT INTO `UserDiscussions` (userID, discussionID) VALUES (72, 2);
