@@ -67,7 +67,11 @@ def SideBarLinks():
             st.sidebar.text(st.session_state['first_name'])
         
 
-        UserProf()
+        if st.session_state["role"] == "student":
+            UserProf()
+        elif st.session_state["role"] == "employer":
+            UserProf()
+
         ForumMenu()
 
         if st.session_state["role"] == "student":

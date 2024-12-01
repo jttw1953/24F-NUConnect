@@ -31,12 +31,26 @@ def get_employers():
     return response
 
 # 2. GET employer details by ID
-@employer.route('/employers/<int:employer_id>', methods=['GET'])
-def get_employer_by_id(employer_id):
+@employer.route('/employers/<int:user_id>', methods=['GET'])
+def get_employer_by_id(user_id):
     query = f'''
-        SELECT employer_id, name, location, company_industry
-        FROM employer
-        WHERE employer_id = {employer_id}
+        SELECT
+            User.userID,
+            User.email,
+            User.phoneNum,
+            User.firstName,
+            User.lastName,
+            Company.name AS companyName,
+            Company.industry,
+            Company.location
+        FROM
+            User
+        INNER JOIN
+            Employers ON User.userID = Employers.userID
+        INNER JOIN
+            Company ON Employers.companyID = Company.companyID
+        WHERE
+            User.userID = {user_id};
     '''
     cursor = db.get_db().cursor()
     cursor.execute(query)
@@ -46,7 +60,7 @@ def get_employer_by_id(employer_id):
         response = make_response(jsonify(employer))
         response.status_code = 200
     else:
-        response = make_response({"error": f"Employer with ID {employer_id} not found"})
+        response = make_response({"error": f"Employer with User ID {user_id} not found"})
         response.status_code = 404
     return response
 
@@ -143,6 +157,51 @@ def get_students():
             Skill ON Student.studentID = Skill.studentID
         GROUP BY
             User.userID, User.email, User.phoneNum, User.firstName, User.lastName, Student.major, Student.admitYear;'''
+    
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    theData = cursor.fetchall()
+    
+    the_response = make_response(jsonify(theData))
+    the_response.status_code = 200
+    return the_response
+
+
+@employer.route('/students/<int:user_id>', methods=['GET'])
+def get_student_by_id(user_id):
+    query = f'''
+        SELECT
+        User.userID,
+        User.email,
+        User.phoneNum,
+        User.firstName, 
+        User.lastName,
+        Student.major,
+        Student.admitYear,
+        GROUP_CONCAT(Skill.name) AS skills
+        FROM User
+        INNER JOIN Student ON User.userID = Student.userID
+        LEFT JOIN Skill ON Student.studentID = Skill.studentID
+        WHERE User.userID = {user_id}
+        GROUP BY User.userID, User.email, User.phoneNum, User.firstName, User.lastName, Student.major, Student.admitYear; 
+        '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    employer = cursor.fetchone()
+
+    if employer:
+        response = make_response(jsonify(employer))
+        response.status_code = 200
+    else:
+        response = make_response({"error": f"Student with User ID {user_id} not found"})
+        response.status_code = 404
+    return response
+
+# return a role
+@employer.route('/role/<int:user_id>', methods=['GET'])
+def get_role(user_id):
+    query = f'''
+        SELECT role FROM User WHERE User.UserID = {user_id}'''
     
     cursor = db.get_db().cursor()
     cursor.execute(query)

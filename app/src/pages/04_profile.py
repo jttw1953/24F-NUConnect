@@ -1,25 +1,43 @@
 import logging
-logger = logging.getLogger(__name__)
-
+import requests
 import streamlit as st
 from modules.menubar import SideBarLinks
+
+logger = logging.getLogger(__name__)
+
 SideBarLinks()
 
+role_response = requests.get(f"http://api:4000/emp/role/{st.session_state['user id']}").json()
+if role_response and isinstance(role_response, list):
+    role = role_response[0].get("role", "").lower()
+else:
+    role = None
 
-# st.title("Profile Page")
-# st.image(profile_data["profile_picture_url"], width=150)
+if role == "student":
+    profile = requests.get(f"http://api:4000/emp/students/{st.session_state['user id']}").json()
+    if profile:
+        st.subheader("Student Profile")
+        st.write(f"**Name**: {profile.get('firstName', 'N/A')} {profile.get('lastName', 'N/A')}")
+        st.write(f"**Email**: {profile.get('email', 'N/A')}")
+        st.write(f"**Phone Number**: {profile.get('phoneNum', 'N/A')}")
+        st.write(f"**Major**: {profile.get('major', 'N/A')}")
+        st.write(f"**Admit Year**: {profile.get('admitYear', 'N/A')}")
+        st.write(f"**Skills**: {profile.get('skills', 'N/A')}")
+    else:
+        st.error("Student profile not found.")
 
-# st.header(profile_data["name"])
-# st.subheader(profile_data["title"])
+elif role == "employer":
+    profile = requests.get(f"http://api:4000/emp/employers/{st.session_state['user id']}").json()
+    if profile:
+        st.subheader("Employer Profile")
+        st.write(f"**Name**: {profile.get('firstName', 'N/A')} {profile.get('lastName', 'N/A')}")
+        st.write(f"**Email**: {profile.get('email', 'N/A')}")
+        st.write(f"**Phone Number**: {profile.get('phoneNum', 'N/A')}")
+        st.write(f"**Company Name**: {profile.get('companyName', 'N/A')}")
+        st.write(f"**Industry**: {profile.get('industry', 'N/A')}")
+        st.write(f"**Location**: {profile.get('location', 'N/A')}")
+    else:
+        st.error("Employer profile not found.")
 
-# st.write("### Bio")
-# st.write(profile_data["bio"])
-
-# st.write("### Contact Information")
-# st.write(f"- **Email**: {profile_data['email']}")
-# st.write(f"- **Phone**: {profile_data['phone']}")
-# st.write(f"- **Location**: {profile_data['location']}")
-
-# st.write("### Skills")
-# st.write(", ".join(profile_data["skills"]))
-
+else:
+    st.error("Invalid user role or user not found.")
