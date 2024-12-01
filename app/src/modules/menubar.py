@@ -60,6 +60,13 @@ def SideBarLinks():
         st.sidebar.title("NUCONNECT")
         st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
+        if 'profile_pic' in st.session_state:
+            st.sidebar.image(st.session_state['profile_pic'], width=100)
+            
+        if 'first_name' in st.session_state:
+            st.sidebar.text(st.session_state['first_name'])
+        
+
         UserProf()
         ForumMenu()
 

@@ -126,12 +126,12 @@ def delete_employer(employer_id):
 @employer.route('/students', methods=['GET'])
 def get_students():
     query = '''
-        SELECT student_id, name, skills
-        FROM students
-    '''
+        SELECT studentID, major, admitYear FROM Student
+        '''
     cursor = db.get_db().cursor()
     cursor.execute(query)
-    students = cursor.fetchall()
-    response = make_response(jsonify(students))
-    response.status_code = 200
-    return response
+    theData = cursor.fetchall()
+    
+    the_response = make_response(jsonify(theData))
+    the_response.status_code = 200
+    return the_response
