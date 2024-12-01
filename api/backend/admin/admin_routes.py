@@ -304,3 +304,38 @@ def get_activity_log():
     the_response = make_response(jsonify(logs))
     the_response.status_code = 200
     return the_response
+
+@admin.route('/forumdiscussions', methods=['GET'])
+def get_forum_discussions():
+    query = """
+        SELECT
+            ForumDiscussion.discussionID,
+            ForumDiscussion.title,
+            ForumDiscussion.content,
+            ForumDiscussion.tags,
+            ForumDiscussion.createdAt,
+            CONCAT(User.firstName, ' ', User.lastName) AS createdBy,
+            COUNT(Comment.commentID) AS commentCount
+        FROM
+            ForumDiscussion
+        INNER JOIN
+            User ON ForumDiscussion.createdBy = User.userID
+        LEFT JOIN
+            Comment ON ForumDiscussion.discussionID = Comment.forumID
+        GROUP BY
+            ForumDiscussion.discussionID,
+            ForumDiscussion.title,
+            ForumDiscussion.content,
+            ForumDiscussion.tags,
+            ForumDiscussion.createdAt,
+            User.firstName,
+            User.lastName
+        ORDER BY
+            ForumDiscussion.createdAt DESC;
+            """
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    discussions = cursor.fetchall()
+    response = jsonify(discussions)
+    response.status_code = 200
+    return response
