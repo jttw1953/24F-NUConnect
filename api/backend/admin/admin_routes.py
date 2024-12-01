@@ -264,3 +264,43 @@ def delete_address_content(content_id):
     db.get_db().commit()
 
     return make_response(f"Address content with ID {content_id} deleted successfully", 200)
+
+#------------------------------------------------------------
+# GET activity log
+@admin.route('/activity-log', methods=['GET'])
+def get_activity_log():
+    # Get query parameters for filtering
+    user_id = request.args.get('userID')
+    activity_type = request.args.get('activityType')
+    start_date = request.args.get('startDate')
+    end_date = request.args.get('endDate')
+
+    # Base query
+    query = '''
+        SELECT activityID, userID, activityType, logTime
+        FROM ActivityLog
+        WHERE 1=1
+    '''
+    params = []
+
+    # Add filters if provided
+    if user_id:
+        query += ' AND userID = %s'
+        params.append(user_id)
+    if activity_type:
+        query += ' AND activityType = %s'
+        params.append(activity_type)
+    if start_date and end_date:
+        query += ' AND logTime BETWEEN %s AND %s'
+        params.append(start_date)
+        params.append(end_date)
+
+    # Execute the query
+    cursor = db.get_db().cursor()
+    cursor.execute(query, params)
+    logs = cursor.fetchall()
+
+    # Return the logs
+    the_response = make_response(jsonify(logs))
+    the_response.status_code = 200
+    return the_response
