@@ -120,9 +120,6 @@ with col4:
 
     if st.button('# Admin Login', use_container_width=True):
         st.session_state['authenticated'] = True
-
-
-
         st.session_state['role'] = 'admin'
         st.session_state['first_name'] = 'Admin'
         st.switch_page('pages/02_admin_home.py')

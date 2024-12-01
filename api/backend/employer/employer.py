@@ -121,3 +121,17 @@ def delete_employer(employer_id):
     response = make_response({"message": f"Employer {employer_id} deleted successfully"})
     response.status_code = 200
     return response
+
+# return a student
+@employer.route('/students', methods=['GET'])
+def get_students():
+    query = '''
+        SELECT student_id, name, skills
+        FROM students
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    students = cursor.fetchall()
+    response = make_response(jsonify(students))
+    response.status_code = 200
+    return response
