@@ -6,21 +6,24 @@ from datetime import datetime, timedelta
 analyst = Blueprint('analyst', __name__)
 
 # Get a count of new jobs, applications, discussions, and comments in the last day
-@analyst.route('/DailySummary/count', methods=["GET"])
+@analyst.route('/DailySummary', methods=["GET"])
 def get_summary():
+    from datetime import datetime, timedelta
     end = datetime.utcnow()  
     start = end - timedelta(days=1)
     start_date = start.strftime('%Y-%m-%d %H:%M:%S')
     end_date = end.strftime('%Y-%m-%d %H:%M:%S')
+    
     query = '''
         SELECT
-        (SELECT COUNT(*) FROM Application WHERE datePosted BETWEEN '{start_date}' AND '{end_date}') AS apps_sent,
-        (SELECT COUNT(*) FROM Job WHERE dateSubmitted BETWEEN '{start_date}' AND '{end_date}') AS jobs_posted,
-        (SELECT COUNT(*) FROM ForumDiscussion WHERE createdAt BETWEEN '{start_date}' AND '{end_date}') AS new_discussions,
-        (SELECT COUNT(*) FROM Comment WHERE createdAt BETWEEN '{start_date}' AND '{end_date}') AS new_comments);
+            (SELECT COUNT(*) FROM Application WHERE dateSubmitted BETWEEN %s AND %s) AS apps_sent,
+            (SELECT COUNT(*) FROM Job WHERE datePosted BETWEEN %s AND %s) AS jobs_posted,
+            (SELECT COUNT(*) FROM ForumDiscussion WHERE createdAt BETWEEN %s AND %s) AS new_discussions,
+            (SELECT COUNT(*) FROM Comment WHERE createdAt BETWEEN %s AND %s) AS new_comments;
     '''
+    
     cursor = db.get_db().cursor()
-    cursor.execute(query)
+    cursor.execute(query, (start_date, end_date, start_date, end_date, start_date, end_date, start_date, end_date))
     theData = cursor.fetchall()
 
     response = make_response(jsonify(theData))
@@ -29,7 +32,7 @@ def get_summary():
 
 # Get all forum discussion posts
 @analyst.route('/ForumDiscussion', methods=["GET"])
-def get_summary():
+def get_discussion():
     query = '''
         SELECT * 
         FROM ForumDiscussion
@@ -43,13 +46,17 @@ def get_summary():
     return response
 
 # Get all forum discussion with a certain tag
-@analyst.route('/ForumDiscussion/{tags}', methods=["GET"])
-def get_summary(tag):
-    query = '''
-        SELECT * 
-        FROM ForumDiscussion
-        WHERE tags = {tag}
-    '''
+@analyst.route('/Tags', methods=["GET"])
+def get_tags():
+    tag = request.args.get('tag')
+
+    query = 'SELECT * FROM ForumDiscussion'
+    filters = []
+    if tag:
+        filters.append(f"tags = '{tag}'")
+
+    if filters:
+        query += ' WHERE ' + ' AND '.join(filters)
     cursor = db.get_db().cursor()
     cursor.execute(query)
     theData = cursor.fetchall()
@@ -60,11 +67,24 @@ def get_summary(tag):
 
 # Get all comments
 @analyst.route('/Comments', methods=["GET"])
-def get_summary():
+def get_comments():
     query = '''
         SELECT * 
-        FROM Comments
-        GROUP BY forumID
+        FROM Comment
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    theData = cursor.fetchall()
+
+    response = make_response(jsonify(theData))
+    response.status_code = 200
+    return response
+
+@analyst.route('/Students', methods=["GET"])
+def get_students():
+    query = '''
+        SELECT * 
+        FROM Student
     '''
     cursor = db.get_db().cursor()
     cursor.execute(query)
@@ -75,13 +95,16 @@ def get_summary():
     return response
 
 # Get all activity log of a certain type
-@analyst.route('/ActivityLog/{activityType}', methods=["GET"])
-def get_summary(activityType):
-    query = '''
-        SELECT * 
-        FROM ActivityLog
-        WHERE activityType = {activityType}
-    '''
+@analyst.route('/ActivityLog', methods=["GET"])
+def get_activity():
+    activitytype  = request.args.get('type')
+    query = 'SELECT * FROM ActivityLog'
+    filters = []
+    if activitytype:
+        filters.append(f"activityType = '{activitytype}'")
+
+    if filters:
+        query += ' WHERE ' + ' AND '.join(filters)
     cursor = db.get_db().cursor()
     cursor.execute(query)
     theData = cursor.fetchall()
@@ -92,11 +115,10 @@ def get_summary(activityType):
 
 # Get all Jobs
 @analyst.route('/Jobs', methods=["GET"])
-def get_summary():
+def get_jobs():
     query = '''
         SELECT * 
         FROM Job
-        GROUP BY companyID
     '''
     cursor = db.get_db().cursor()
     cursor.execute(query)
@@ -108,10 +130,24 @@ def get_summary():
 
 # Get all Applications
 @analyst.route('/Apps', methods=["GET"])
-def get_summary():
+def get_apps():
     query = '''
         SELECT * 
         FROM Application
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    theData = cursor.fetchall()
+
+    response = make_response(jsonify(theData))
+    response.status_code = 200
+    return response
+
+@analyst.route('/Employers', methods=["GET"])
+def get_employers():
+    query = '''
+        SELECT * 
+        FROM Company
     '''
     cursor = db.get_db().cursor()
     cursor.execute(query)
