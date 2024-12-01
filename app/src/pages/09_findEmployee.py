@@ -9,6 +9,6 @@ SideBarLinks()
 st.title("Find Students")
 
 #test table
-results = requests.get(f'http://api:4000/c/customers').json()
+results = requests.get('http://api:4000/c/customers').json()
 st.dataframe(results)
   

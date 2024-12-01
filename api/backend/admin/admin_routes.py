@@ -105,12 +105,13 @@ def delete_maintenance_schedule(maintenance_id):
 # Get all security logs
 @admin.route('/securityLogs', methods=['GET'])
 def get_security_logs():
+
     cursor = db.get_db().cursor()
     cursor.execute('''
-        SELECT log_id, action_type, ip_address, timestamp
-        FROM security_log
+        SELECT log_id, action_type, ip_address, timestamp FROM security_log
     ''')
     logs = cursor.fetchall()
+    
     the_response = make_response(jsonify(logs))
     the_response.status_code = 200
     return the_response
