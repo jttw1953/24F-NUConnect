@@ -22,7 +22,7 @@ def PostJobMenu():
     st.sidebar.page_link("pages/08_postJob.py", label="Post Job", icon="📋")
 
 def FindEmployeeMenu():
-    st.sidebar.page_link("pages/09_findEmployee.py", label="Find Employee", icon="🔍")
+    st.sidebar.page_link("pages/09_findStudent.py", label="Find Students", icon="🔍")
 
 # Analyst-specific menus
 def SummaryMenu():

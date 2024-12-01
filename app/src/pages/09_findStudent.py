@@ -22,6 +22,7 @@ if results:
         skills = student.get('skills', 'N/A')  
 
         with st.container():
+            st.image("assets/profile_pic.jpg", width = 50)
             st.subheader(f"{first_name} {last_name}")
             st.write(f"**Email**: {email}")
             st.write(f"**Phone**: {phone}")

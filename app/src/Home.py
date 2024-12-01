@@ -119,7 +119,7 @@ with col4:
         st.session_state['role'] = 'employer'
         st.session_state['user id'] = 81
         st.session_state['first_name'] = 'Sarah'
-        st.session_state['profile_pic'] = "assets/student_p1.jpg"
+        st.session_state['profile_pic'] = "assets/employer_p1.jpg"
         st.switch_page('pages/01_employer_home.py')
 
     if st.button('# Admin Login', use_container_width=True):
@@ -127,7 +127,7 @@ with col4:
         st.session_state['role'] = 'admin'
         st.session_state['user id'] = 43
         st.session_state['first_name'] = 'Bob'
-        st.session_state['profile_pic'] = "assets/student_p1.jpg"
+        st.session_state['profile_pic'] = "assets/admin_p1.png"
         st.switch_page('pages/02_admin_home.py')
 
     if st.button('# Data Analyst', use_container_width=True):
@@ -135,5 +135,5 @@ with col4:
         st.session_state['role'] = 'analyst'
         st.session_state['user id'] = 121
         st.session_state['first_name'] = 'Lisa'
-        st.session_state['profile_pic'] = "assets/student_p1.jpg"
+        st.session_state['profile_pic'] = "assets/analyst_p1.jpg"
         st.switch_page('pages/03_analyst_home.py')
