@@ -109,27 +109,27 @@ with col4:
     if st.button('Student Login', use_container_width=True):
         st.session_state['authenticated'] = True
         st.session_state['role'] = 'student'
-        st.session_state['first_name'] = 'Student Name'
+        st.session_state['first_name'] = 'Lebron'
         st.session_state['profile_pic'] = "assets/student_p1.jpg"
         st.switch_page('pages/00_student_home.py')
 
     if st.button('# Employer Login', use_container_width=True):
         st.session_state['authenticated'] = True
         st.session_state['role'] = 'employer'
-        st.session_state['first_name'] = 'Employer'
+        st.session_state['first_name'] = 'Sarah'
         st.session_state['profile_pic'] = "assets/student_p1.jpg"
         st.switch_page('pages/01_employer_home.py')
 
     if st.button('# Admin Login', use_container_width=True):
         st.session_state['authenticated'] = True
         st.session_state['role'] = 'admin'
-        st.session_state['first_name'] = 'Admin'
+        st.session_state['first_name'] = 'Bob'
         st.session_state['profile_pic'] = "assets/student_p1.jpg"
         st.switch_page('pages/02_admin_home.py')
 
     if st.button('# Data Analyst', use_container_width=True):
         st.session_state['authenticated'] = True
         st.session_state['role'] = 'analyst'
-        st.session_state['first_name'] = 'Analyst'
+        st.session_state['first_name'] = 'Lisa'
         st.session_state['profile_pic'] = "assets/student_p1.jpg"
         st.switch_page('pages/03_analyst_home.py')
