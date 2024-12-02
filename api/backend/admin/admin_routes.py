@@ -266,7 +266,38 @@ def get_all_content_flags():
     except Exception as e:
         current_app.logger.error(f"Error fetching content flags: {e}")
         return make_response("Failed to fetch content flags", 500)
+#------------------------------------------------------------
+# Post to add a flag 
+@admin.route('/flags', methods=['POST'])
+def create_content_flag():
+    """
+    POST route to create a new content flag.
+    """
+    try:
+        # Get the JSON data from the request
+        flag_data = request.json
+        content_id = flag_data.get('contentID')
+        reason = flag_data.get('reason')
+        status = flag_data.get('status')
 
+        # Validate the required fields
+        if not content_id or not reason or not status:
+            return make_response("Missing required fields: contentID, reason, or status", 400)
+
+        # Query to insert the new content flag into the database
+        query = '''
+            INSERT INTO ContentFlag (contentID, timestamp, status, reason)
+            VALUES (%s, NOW(), %s, %s)
+        '''
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (content_id, reason, status))
+        db.get_db().commit()
+
+        return make_response(f"Content flag created successfully for content ID {content_id}", 201)
+
+    except Exception as e:
+        # Log and return the error message
+        return make_response(f"Error creating content flag: {str(e)}", 500)
 
 #------------------------------------------------------------
 # PUT to update a flag status
@@ -291,13 +322,13 @@ def update_flag_status(flag_id):
     return make_response(f"Flag {flag_id} status updated to {new_status}", 200)
 
 #------------------------------------------------------------
-# DELETE a flag status
-@admin.route('/address-content/<int:content_id>', methods=['DELETE'])
-def delete_address_content(content_id):
+# DELETE a flag
+@admin.route('/flags/<int:content_id>', methods=['DELETE'])
+def delete_flag_content(content_id):
     # Query to delete the flagged address content
     query = '''
         DELETE FROM ContentFlag
-        WHERE contentID = %s
+        WHERE flagID = %s
     '''
     cursor = db.get_db().cursor()
     cursor.execute(query, (content_id,))

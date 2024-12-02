@@ -202,30 +202,30 @@ CREATE TABLE `UserDiscussions` (
     userID INT NOT NULL,
     discussionID INT NOT NULL,
     PRIMARY KEY (userID, discussionID),
-    FOREIGN KEY (userID) REFERENCES User(userID),
-    FOREIGN KEY (discussionID) REFERENCES ForumDiscussion(discussionID)
+    FOREIGN KEY (userID) REFERENCES User(userID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (discussionID) REFERENCES ForumDiscussion(discussionID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE `UserComments` (
     userID INT NOT NULL,
     commentID INT NOT NULL,
     PRIMARY KEY (userID, commentID),
-    FOREIGN KEY (userID) REFERENCES User(userID),
-    FOREIGN KEY (commentID) REFERENCES Comment(commentID)
+    FOREIGN KEY (userID) REFERENCES User(userID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (commentID) REFERENCES Comment(commentID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE `DiscussionFlags` (
     discussionID INT NOT NULL,
     flagID INT NOT NULL,
     PRIMARY KEY (discussionID, flagID),
-    FOREIGN KEY (discussionID) REFERENCES ForumDiscussion(discussionID),
-    FOREIGN KEY (flagID) REFERENCES ContentFlag(flagID)
+    FOREIGN KEY (discussionID) REFERENCES ForumDiscussion(discussionID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (flagID) REFERENCES ContentFlag(flagID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE `CommentFlags` (
     commentID INT NOT NULL,
     flagID INT NOT NULL,
     PRIMARY KEY (commentID, flagID),
-    FOREIGN KEY (commentID) REFERENCES Comment(commentID),
-    FOREIGN KEY (flagID) REFERENCES ContentFlag(flagID)
+    FOREIGN KEY (commentID) REFERENCES Comment(commentID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (flagID) REFERENCES ContentFlag(flagID) ON DELETE CASCADE ON UPDATE CASCADE
 );
