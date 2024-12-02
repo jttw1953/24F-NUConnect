@@ -144,3 +144,63 @@ def post_message():
     response = make_response({"message": "Message sent successfully"})
     response.status_code = 201
     return response
+
+#6 Update a forum discussion
+@student.route('/ForumDiscussion/<int:post_id>', methods=['PUT'])
+def update_forum_post(post_id):
+    data = request.json
+    updates = []
+
+    if 'content' in data:
+        updates.append(f"content = '{data['content']}'")
+    if 'tags' in data:
+        updates.append(f"tags = '{data['tags']}'")
+
+    if not updates:
+        return make_response({"error": "No fields provided for update"}, 400)
+
+    query = f'''
+        UPDATE ForumDiscussion
+        SET {', '.join(updates)}
+        WHERE discussionID = {post_id};
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    db.get_db().commit()
+
+    response = make_response({"message": f"Discussion {post_id} updated successfully"})
+    response.status_code = 200
+    return response
+
+#7 Fetch skills for student
+@student.route('/Skill/<int:student_id>', methods=['GET'])
+def get_student_skills(student_id):
+    query = f'''
+        SELECT Skill.name
+        FROM Skill
+        JOIN Student ON Skill.studentID = Student.studentID
+        WHERE Student.studentID = {student_id};
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    skills = cursor.fetchall()
+
+    response = make_response(jsonify(skills))
+    response.status_code = 200
+    return response
+
+#8 add a comment
+@student.route('/Comment', methods=['POST'])
+def add_comment():
+    data = request.json
+    query = f'''
+        INSERT INTO Comment (postID, studentID, content, createdAt)
+        VALUES ('{data["postID"]}', '{data["studentID"]}', '{data["content"]}', NOW());
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    db.get_db().commit()
+
+    response = make_response({"message": "Comment added successfully"})
+    response.status_code = 201
+    return response
