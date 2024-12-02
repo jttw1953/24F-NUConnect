@@ -76,13 +76,20 @@ def update_system_alert(alert_id):
     return make_response(f"System alert {alert_id} updated successfully", 200)
 
 #------------------------------------------------------------
-# Get all maintenance schedules
+# GET all maintenance scheduless
 @admin.route('/maintenance', methods=['GET'])
 def get_maintenance_schedules():
     cursor = db.get_db().cursor()
     cursor.execute('''
-        SELECT maintenanceID, description, startTime, endTime, performedBy
-        FROM Maintenance
+        SELECT 
+            m.maintenanceID, 
+            m.description, 
+            m.startTime, 
+            m.endTime, 
+            u.username AS performedBy
+        FROM Maintenance m
+        JOIN Admin a ON m.performedBy = a.adminID
+        JOIN User u ON a.userID = u.userID
     ''')
     schedules = cursor.fetchall()
     the_response = make_response(jsonify(schedules))
@@ -90,7 +97,7 @@ def get_maintenance_schedules():
     return the_response
 
 #------------------------------------------------------------
-# Delete a maintenance schedule by ID
+# DELETE a maintenance schedule by ID
 @admin.route('/maintenance/<int:maintenance_id>', methods=['DELETE'])
 def delete_maintenance_schedule(maintenance_id):
     query = '''
@@ -227,6 +234,39 @@ def update_maintenance_schedule(maintenance_id):
     response = make_response(f"Maintenance schedule {maintenance_id} updated successfully")
     response.status_code = 200
     return response
+
+#------------------------------------------------------------
+# GET all flags
+@admin.route('/flags', methods=['GET'])
+def get_all_content_flags():
+    try:
+        cursor = db.get_db().cursor()
+        query = '''
+            SELECT
+                cf.flagID,
+                cf.contentID,
+                cf.timestamp,
+                cf.reason,
+                cf.status,
+                CASE
+                    WHEN c.content IS NOT NULL THEN c.content
+                    WHEN fd.title IS NOT NULL THEN fd.title
+                    ELSE 'Unknown Content'
+                END AS flaggedContent
+            FROM ContentFlag cf
+            LEFT JOIN Comment c ON cf.contentID = c.commentID
+            LEFT JOIN ForumDiscussion fd ON cf.contentID = fd.discussionID
+        '''
+        cursor.execute(query)
+        flags = cursor.fetchall()
+
+        response = make_response(jsonify(flags))
+        response.status_code = 200
+        return response
+    except Exception as e:
+        current_app.logger.error(f"Error fetching content flags: {e}")
+        return make_response("Failed to fetch content flags", 500)
+
 
 #------------------------------------------------------------
 # PUT to update a flag status

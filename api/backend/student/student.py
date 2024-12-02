@@ -74,28 +74,58 @@ def get_application_status(student_id):
 @student.route('/Job', methods=['GET'])
 def get_jobs():
     major = request.args.get('major')
-    skills = request.args.get('skills')
+    skills = request.args.get('skills')  # Expected as comma-separated values
     company = request.args.get('company')
 
-    query = "SELECT DISTINCT j.jobID, j.title, j.description FROM Job j"
+    # Base query
+    query = """
+        SELECT DISTINCT j.jobID, j.title, j.description 
+        FROM Job j
+    """
+    joins = []
     filters = []
+    params = []
 
+    # Add joins and filters based on provided query parameters
     if skills:
-        query += " JOIN JobSkill js ON j.jobID = js.jobID JOIN Skill sk ON js.skillID = sk.skillID"
-        filters.append(f"sk.name IN ({','.join([f'\'{skill}\'' for skill in skills.split(',')])})")
-    if major:
-        filters.append(f"j.major = '{major}'")
-    if company:
-        filters.append(f"j.companyID = '{company}'")
+        joins.append("JOIN JobSkill js ON j.jobID = js.jobID")
+        joins.append("JOIN Skill sk ON js.skillID = sk.skillID")
+        skill_list = skills.split(",")
+        placeholders = ', '.join(['%s'] * len(skill_list))
+        filters.append(f"sk.name IN ({placeholders})")
+        params.extend(skill_list)
 
+    if major:
+        filters.append("j.major = %s")
+        params.append(major)
+
+    if company:
+        filters.append("j.companyID = %s")
+        params.append(company)
+
+    # Add JOINs and WHERE clause if needed
+    if joins:
+        query += " " + " ".join(joins)
     if filters:
         query += " WHERE " + " AND ".join(filters)
 
     cursor = db.get_db().cursor()
-    cursor.execute(query)
+
+    # Execute the query with parameters
+    cursor.execute(query, params)
     jobs = cursor.fetchall()
 
-    response = make_response(jsonify(jobs))
+    # Format response
+    job_list = [
+        {
+            "jobID": job[0],
+            "title": job[1],
+            "description": job[2]
+        }
+        for job in jobs
+    ]
+
+    response = make_response(jsonify(job_list))
     response.status_code = 200
     return response
 

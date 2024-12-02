@@ -559,46 +559,47 @@ INSERT INTO `Application` (appID, studentID, jobID, dateSubmitted, status) VALUE
 INSERT INTO `Application` (appID, studentID, jobID, dateSubmitted, status) VALUES (40, 24, 26, '2024-08-25 04:12:26', 'approved');
 
 -- Sample Data for Comment Table
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (1, 129, 18, '2024-08-12 09:26:07');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (2, 86, 33, '2024-04-06 18:34:55');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (3, 97, 9, '2024-03-27 18:28:47');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (4, 122, 32, '2024-03-06 21:10:26');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (5, 87, 21, '2024-07-26 13:54:48');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (6, 103, 31, '2024-09-19 08:32:05');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (7, 28, 24, '2024-09-02 23:25:45');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (8, 79, 34, '2024-03-22 14:21:18');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (9, 83, 7, '2024-10-06 18:44:10');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (10, 140, 14, '2024-10-01 18:14:47');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (11, 90, 39, '2024-06-12 00:24:14');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (12, 19, 22, '2024-06-19 14:41:14');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (13, 105, 27, '2024-08-06 18:58:41');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (14, 139, 28, '2024-09-07 10:07:47');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (15, 3, 39, '2024-08-26 23:35:50');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (16, 71, 30, '2024-09-04 09:20:06');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (17, 56, 4, '2024-01-22 14:07:42');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (18, 39, 13, '2024-04-04 17:20:46');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (19, 63, 40, '2024-04-24 23:56:06');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (20, 38, 1, '2024-03-16 23:48:40');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (21, 59, 16, '2024-07-17 10:15:15');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (22, 39, 10, '2024-08-26 00:14:28');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (23, 5, 32, '2024-02-13 06:29:58');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (24, 116, 21, '2024-02-01 19:18:16');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (25, 133, 24, '2024-01-31 02:59:27');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (26, 101, 31, '2024-09-02 00:38:23');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (27, 70, 20, '2024-04-06 20:10:07');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (28, 109, 32, '2024-01-09 19:45:48');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (29, 79, 27, '2024-03-15 04:22:39');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (30, 47, 11, '2024-04-21 11:13:15');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (31, 113, 17, '2024-06-13 21:47:22');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (32, 93, 21, '2024-07-18 21:30:09');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (33, 9, 32, '2024-06-26 03:27:15');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (34, 103, 7, '2024-10-12 18:38:01');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (35, 33, 20, '2024-08-24 15:54:08');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (36, 63, 26, '2024-05-26 02:36:39');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (37, 125, 19, '2024-07-26 16:42:10');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (38, 131, 21, '2024-07-05 19:05:32');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (39, 3, 21, '2024-09-12 01:18:12');
-INSERT INTO `Comment` (commentID, createdBy, forumID, createdAt) VALUES (40, 10, 9, '2024-10-08 20:11:53');
+INSERT INTO `Comment` (commentID, createdBy, forumID, content, createdAt) VALUES 
+(1, 129, 18, 'This is a great discussion topic. Thanks for sharing!', '2024-08-12 09:26:07'),
+(2, 86, 33, 'I completely agree with the points made here.', '2024-04-06 18:34:55'),
+(3, 97, 9, 'Does anyone have more resources on this subject?', '2024-03-27 18:28:47'),
+(4, 122, 32, 'This was very helpful. Thank you!', '2024-03-06 21:10:26'),
+(5, 87, 21, 'Interesting take, but I have a slightly different opinion.', '2024-07-26 13:54:48'),
+(6, 103, 31, 'Can we dive deeper into the technical aspects of this?', '2024-09-19 08:32:05'),
+(7, 28, 24, 'I think this aligns well with the project requirements.', '2024-09-02 23:25:45'),
+(8, 79, 34, 'Great insights! I hadn’t considered this perspective.', '2024-03-22 14:21:18'),
+(9, 83, 7, 'Is this solution scalable for larger teams?', '2024-10-06 18:44:10'),
+(10, 140, 14, 'Let me know if you need help with implementation.', '2024-10-01 18:14:47'),
+(11, 90, 39, 'This really clears up my confusion. Thanks!', '2024-06-12 00:24:14'),
+(12, 19, 22, 'Could we add more examples to make this clearer?', '2024-06-19 14:41:14'),
+(13, 105, 27, 'Amazing work! This will be very useful.', '2024-08-06 18:58:41'),
+(14, 139, 28, 'What are your thoughts on the alternative solutions?', '2024-09-07 10:07:47'),
+(15, 3, 39, 'Let’s schedule a meeting to discuss this further.', '2024-08-26 23:35:50'),
+(16, 71, 30, 'I think this could benefit from more user feedback.', '2024-09-04 09:20:06'),
+(17, 56, 4, 'Have we considered the budget constraints for this?', '2024-01-22 14:07:42'),
+(18, 39, 13, 'Looking forward to seeing this in action.', '2024-04-04 17:20:46'),
+(19, 63, 40, 'Do we have a timeline for the next steps?', '2024-04-24 23:56:06'),
+(20, 38, 1, 'Can someone summarize the key points discussed?', '2024-03-16 23:48:40'),
+(21, 59, 16, 'This aligns perfectly with our objectives.', '2024-07-17 10:15:15'),
+(22, 39, 10, 'I found some issues with the current implementation.', '2024-08-26 00:14:28'),
+(23, 5, 32, 'Can we get more details on the constraints involved?', '2024-02-13 06:29:58'),
+(24, 116, 21, 'What tools are we planning to use for this?', '2024-02-01 19:18:16'),
+(25, 133, 24, 'This is an interesting case study to explore.', '2024-01-31 02:59:27'),
+(26, 101, 31, 'We need to document this process more thoroughly.', '2024-09-02 00:38:23'),
+(27, 70, 20, 'Have you seen the new updates in the documentation?', '2024-04-06 20:10:07'),
+(28, 109, 32, 'This could be a great addition to our project.', '2024-01-09 19:45:48'),
+(29, 79, 27, 'Let’s test this on a smaller scale first.', '2024-03-15 04:22:39'),
+(30, 47, 11, 'Can we clarify the expectations for this deliverable?', '2024-04-21 11:13:15'),
+(31, 113, 17, 'This requires further review by the team.', '2024-06-13 21:47:22'),
+(32, 93, 21, 'Can you elaborate on the assumptions made here?', '2024-07-18 21:30:09'),
+(33, 9, 32, 'This looks promising! Let’s move forward.', '2024-06-26 03:27:15'),
+(34, 103, 7, 'We need to check compatibility with existing systems.', '2024-10-12 18:38:01'),
+(35, 33, 20, 'Have we received all the necessary approvals?', '2024-08-24 15:54:08'),
+(36, 63, 26, 'Let’s align this with our long-term goals.', '2024-05-26 02:36:39'),
+(37, 125, 19, 'Can you share the references used for this?', '2024-07-26 16:42:10'),
+(38, 131, 21, 'Does this adhere to the latest compliance standards?', '2024-07-05 19:05:32'),
+(39, 3, 21, 'This is a game-changer for our team!', '2024-09-12 01:18:12'),
+(40, 10, 9, 'Thanks for clarifying the doubts I had.', '2024-10-08 20:11:53');
 
 -- Sample Data for DailySummary Table
 INSERT INTO `DailySummary` (summaryID, jobID, applicationID, discussionID, notify) VALUES (1, 31, 11, 26, 7);
@@ -685,46 +686,47 @@ INSERT INTO `ActivityLog` (activityID, logTime, userID, activityType) VALUES (39
 INSERT INTO `ActivityLog` (activityID, logTime, userID, activityType) VALUES (40, '2024-07-18 21:11:50', 24, 'logout');
 
 -- Sample Data for ContentFlag Table
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (1, 37, '2024-06-30 22:54:47', 'Leg suffer could authority cause keep.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (2, 19, '2024-03-13 16:26:22', 'Pressure open yes gun part.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (3, 34, '2024-09-03 16:37:48', 'Alone listen take.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (4, 23, '2024-05-16 09:06:41', 'Do character fly.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (5, 14, '2024-04-28 05:15:37', 'Industry rock power herself head this.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (6, 29, '2024-09-14 10:36:53', 'Value at staff.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (7, 38, '2024-10-10 22:04:48', 'Order stop leg high fact.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (8, 9, '2024-04-11 21:23:27', 'Politics concern share sea reveal.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (9, 29, '2024-09-24 10:34:21', 'Program shoulder good.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (10, 13, '2024-07-09 18:57:56', 'Style beautiful indicate voice.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (11, 10, '2024-04-17 13:48:44', 'Exactly outside easy thought tough.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (12, 36, '2024-03-04 01:07:08', 'Son for yeah check among.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (13, 14, '2024-06-03 22:14:07', 'Base life future leader adult.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (14, 21, '2024-11-18 23:01:37', 'Talk protect moment.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (15, 31, '2024-10-13 06:52:01', 'Recent since put after program tend.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (16, 9, '2024-04-03 04:00:54', 'Rock professional scene late.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (17, 27, '2024-10-02 13:08:53', 'Bank teach agree star see.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (18, 7, '2024-01-20 04:13:14', 'Senior feeling security us surface unit.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (19, 2, '2024-10-14 06:57:11', 'Under phone difficult none start without.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (20, 17, '2024-10-08 03:10:29', 'Trouble movement shoulder however form.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (21, 34, '2024-03-12 08:17:57', 'Field positive likely.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (22, 5, '2024-05-24 00:39:40', 'Then wind goal management all at.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (23, 6, '2024-05-14 10:21:05', 'Final street here student report north.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (24, 6, '2024-07-25 04:44:38', 'Right side the film.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (25, 1, '2024-03-17 08:50:38', 'Artist professor last animal watch red.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (26, 16, '2024-08-07 01:51:47', 'Vote media kind issue too best.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (27, 24, '2024-10-19 19:13:34', 'Newspaper nature fire from.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (28, 7, '2024-06-05 10:27:55', 'Far often eight.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (29, 34, '2024-05-09 19:59:54', 'Book develop prevent act write.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (30, 34, '2024-09-05 18:11:02', 'Easy control inside quite movie.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (31, 29, '2024-02-29 13:56:15', 'Road future article.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (32, 9, '2024-10-14 14:14:28', 'Away difficult design year center.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (33, 23, '2024-03-11 06:56:13', 'Relate than work language fact.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (34, 40, '2024-01-08 11:16:48', 'Tree scene citizen have.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (35, 2, '2024-02-10 07:57:07', 'Letter gun road billion.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (36, 5, '2024-11-15 17:49:09', 'Contain alone leave full.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (37, 16, '2024-06-21 11:26:36', 'Indicate onto item.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (38, 30, '2024-01-17 08:50:24', 'Apply civil hour history.', 'resolved');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (39, 21, '2024-11-12 03:49:01', 'Age least century discussion.', 'active');
-INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES (40, 12, '2024-03-20 14:48:42', 'Tough kind case ability.', 'resolved');
+INSERT INTO `ContentFlag` (flagID, contentID, timestamp, reason, status) VALUES 
+(1, 37, '2024-06-30 22:54:47', 'Inappropriate language detected in the content.', 'resolved'),
+(2, 19, '2024-03-13 16:26:22', 'Spam content promoting unauthorized services.', 'active'),
+(3, 34, '2024-09-03 16:37:48', 'Content violates community guidelines on hate speech.', 'active'),
+(4, 23, '2024-05-16 09:06:41', 'Duplicate content submitted multiple times.', 'resolved'),
+(5, 14, '2024-04-28 05:15:37', 'Contains misleading or false information.', 'resolved'),
+(6, 29, '2024-09-14 10:36:53', 'Content contains explicit images or references.', 'active'),
+(7, 38, '2024-10-10 22:04:48', 'Unauthorized sharing of sensitive personal information.', 'resolved'),
+(8, 9, '2024-04-11 21:23:27', 'Promotional material unrelated to the forum topic.', 'resolved'),
+(9, 29, '2024-09-24 10:34:21', 'Plagiarized content from another source.', 'resolved'),
+(10, 13, '2024-07-09 18:57:56', 'Harassment or targeted attack in the comments.', 'active'),
+(11, 10, '2024-04-17 13:48:44', 'Use of excessive profanity in the content.', 'resolved'),
+(12, 36, '2024-03-04 01:07:08', 'Comment deemed irrelevant to the discussion.', 'active'),
+(13, 14, '2024-06-03 22:14:07', 'Attempt to bypass automated content moderation.', 'active'),
+(14, 21, '2024-11-18 23:01:37', 'Contains unverifiable claims or fake news.', 'active'),
+(15, 31, '2024-10-13 06:52:01', 'Repeated attempts to derail the discussion.', 'active'),
+(16, 9, '2024-04-03 04:00:54', 'Graphic imagery not suitable for the platform.', 'resolved'),
+(17, 27, '2024-10-02 13:08:53', 'Content flagged for potential copyright infringement.', 'active'),
+(18, 7, '2024-01-20 04:13:14', 'Comment contains excessive self-promotion.', 'resolved'),
+(19, 2, '2024-10-14 06:57:11', 'Link to a malicious or harmful website detected.', 'active'),
+(20, 17, '2024-10-08 03:10:29', 'Content includes discriminatory remarks.', 'active'),
+(21, 34, '2024-03-12 08:17:57', 'Off-topic content that disrupts the forum flow.', 'resolved'),
+(22, 5, '2024-05-24 00:39:40', 'False claims about a product or service.', 'resolved'),
+(23, 6, '2024-05-14 10:21:05', 'Shared outdated or misleading technical advice.', 'resolved'),
+(24, 6, '2024-07-25 04:44:38', 'Comment with broken links or irrelevant references.', 'resolved'),
+(25, 1, '2024-03-17 08:50:38', 'Attempt to impersonate another user.', 'active'),
+(26, 16, '2024-08-07 01:51:47', 'Repeated violation of platform rules.', 'resolved'),
+(27, 24, '2024-10-19 19:13:34', 'Inappropriate humor that offends the community.', 'active'),
+(28, 7, '2024-06-05 10:27:55', 'Irrelevant political commentary.', 'active'),
+(29, 34, '2024-05-09 19:59:54', 'Includes references to illegal activities.', 'active'),
+(30, 34, '2024-09-05 18:11:02', 'Misleading comment on product recommendations.', 'resolved'),
+(31, 29, '2024-02-29 13:56:15', 'Violation of data privacy regulations.', 'resolved'),
+(32, 9, '2024-10-14 14:14:28', 'Content flagged for being overly promotional.', 'resolved'),
+(33, 23, '2024-03-11 06:56:13', 'Contains phishing links targeting users.', 'resolved'),
+(34, 40, '2024-01-08 11:16:48', 'Encourages harmful or unsafe practices.', 'active'),
+(35, 2, '2024-02-10 07:57:07', 'Potentially defamatory content towards an individual.', 'active'),
+(36, 5, '2024-11-15 17:49:09', 'Involves harassment or bullying.', 'active'),
+(37, 16, '2024-06-21 11:26:36', 'Contains unverified medical advice.', 'resolved'),
+(38, 30, '2024-01-17 08:50:24', 'Misrepresentation of facts in a technical discussion.', 'resolved'),
+(39, 21, '2024-11-12 03:49:01', 'Misleading content attempting to manipulate opinions.', 'active'),
+(40, 12, '2024-03-20 14:48:42', 'Violates platform’s guidelines on respect and courtesy.', 'resolved');
 
 -- Sample Data for SecurityLog Table
 INSERT INTO `SecurityLog` (logID, actionType, userID, timestamp, status) VALUES (1, 'login attempt', 37, '2024-11-07 12:42:11', 'failure');
