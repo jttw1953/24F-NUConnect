@@ -291,7 +291,7 @@ def update_flag_status(flag_id):
     return make_response(f"Flag {flag_id} status updated to {new_status}", 200)
 
 #------------------------------------------------------------
-# DELETE to update a flag status
+# DELETE a flag status
 @admin.route('/address-content/<int:content_id>', methods=['DELETE'])
 def delete_address_content(content_id):
     # Query to delete the flagged address content
