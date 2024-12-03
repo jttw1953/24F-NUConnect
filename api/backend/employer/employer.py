@@ -152,7 +152,7 @@ def get_role(user_id):
 
 #return all applicaction applied by students:
 
-@employer.route('/applications/employer/<int:user_id>', methods=['GET'])
+@employer.route('/application/<int:user_id>', methods=['GET'])
 def get_employer_applications(user_id):
     query = f"""
             SELECT

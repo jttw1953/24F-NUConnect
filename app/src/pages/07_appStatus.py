@@ -40,7 +40,7 @@ if role == "student":
 
 elif role == "employer":
     st.subheader("Job Applications to Your Posts")
-    response = requests.get(f"http://api:4000/emp/applications/employer/{user_id}")
+    response = requests.get(f"http://api:4000/emp/application/{user_id}")
     applications = response.json()
 
     if isinstance(applications, list) and applications:
