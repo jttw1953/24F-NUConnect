@@ -185,33 +185,92 @@ def get_employer_applications(user_id):
     else:
         return jsonify({"message": "No applications found."}), 404
 
+# Return discussion with a specific tag
+@employer.route('/forumdiscussion/tags/<string:tag>', methods=['GET'])
+def get_discussions_by_tag(tag):
+    query = """
+        SELECT 
+            discussionID, title, content, createdAt
+        FROM ForumDiscussion
+        WHERE tags LIKE %s;
+    """
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (f"%{tag}%",))
+        discussions = cursor.fetchall()
+        if discussions:
+            return jsonify(discussions), 200
+        else:
+            return jsonify({"message": "No discussions found with this tag."}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-#employer posts a job
-@employer.route('/emp/job', methods=['POST'])
+# Add a tag to a discussion 
+@employer.route('/forumdiscussion/tag/<int:discussion_id>', methods=['POST'])
+def add_tag_to_discussion(discussion_id):
+    data = request.get_json()
+    tag = data.get("tag")
+
+    if not tag:
+        return jsonify({"error": "Tag is required"}), 400
+
+    query = """
+        UPDATE ForumDiscussion
+        SET tags = CONCAT(tags, ', ', %s)
+        WHERE discussionID = %s;
+    """
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (tag, discussion_id))
+        db.get_db().commit()
+        return jsonify({"message": f"Tag '{tag}' added to discussion {discussion_id}"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# Post a new discussion in the forum 
+@employer.route('/forumdiscussion', methods=['POST'])
+def post_discussion():
+    data = request.get_json()
+    created_by = data.get("createdBy")
+    title = data.get("title")
+    content = data.get("content")
+    tags = data.get("tags", "")
+
+    if not (created_by and title and content):
+        return jsonify({"error": "All fields are required"}), 400
+
+    query = """
+        INSERT INTO ForumDiscussion (createdBy, title, content, tags, createdAt)
+        VALUES (%s, %s, %s, %s, NOW());
+    """
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (created_by, title, content, tags))
+        db.get_db().commit()
+        return jsonify({"message": "Discussion posted successfully"}), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+
+# Add a new job 
+@employer.route('/job', methods=['POST'])
 def post_job():
     data = request.get_json()
-    company_name = data.get("companyName")
+    company_id = data.get("companyID")
     title = data.get("title")
     description = data.get("description")
-    deadline = data.get("deadline")
-    employer_id = 1  # Replace with logic to fetch employer ID from session or request context
+    employer_id = 1 
 
-    if not (company_name and title and description and deadline):
+    if not (company_id and title and description):
         return jsonify({"error": "All fields are required"}), 400
 
     try:
         query = """
             INSERT INTO Job (companyID, employerID, title, datePosted, description)
-            VALUES (
-                (SELECT companyID FROM Company WHERE name = %s),
-                %s,
-                %s,
-                NOW(),
-                %s
-            );
+            VALUES (%s, %s, %s, NOW(), %s);
         """
         cursor = db.get_db().cursor()
-        cursor.execute(query, (company_name, employer_id, title, description))
+        cursor.execute(query, (company_id, employer_id, title, description))
         db.get_db().commit()
         return jsonify({"message": "Job posted successfully"}), 201
     except Exception as e:
@@ -240,3 +299,31 @@ def get_employer_company(user_id):
         return jsonify(result), 200
     else:
         return jsonify({"error": "Company not found for this employer."}), 404
+
+# Update a job
+@employer.route('/job/<int:job_id>', methods=['PUT'])
+def update_job(job_id):
+    data = request.get_json()
+    updates = []
+    if "title" in data:
+        updates.append(f"title = '{data['title']}'")
+    if "description" in data:
+        updates.append(f"description = '{data['description']}'")
+    if "deadline" in data:
+        updates.append(f"deadline = '{data['deadline']}'")
+
+    if not updates:
+        return jsonify({"error": "No fields provided for update."}), 400
+
+    query = f"""
+        UPDATE Job
+        SET {", ".join(updates)}
+        WHERE jobID = %s;
+    """
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (job_id,))
+        db.get_db().commit()
+        return jsonify({"message": f"Job {job_id} updated successfully"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

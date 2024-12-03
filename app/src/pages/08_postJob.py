@@ -8,7 +8,6 @@ SideBarLinks()
 
 st.title("Post a Job")
 
-# Fetch employer's company information
 user_id = 81
 company_options = []
 
@@ -22,7 +21,7 @@ try:
 except Exception as e:
     st.error(f"Error connecting to the server: {e}")
 
-# Dropdown for company name
+
 if company_options:
     company_id, company_name = st.selectbox(
         "Select Company",
@@ -34,25 +33,22 @@ else:
     st.error("No companies available for this employer.")
     st.stop()
 
-# Input fields for job information
 job_title = st.text_input("Job Title", placeholder="Enter the job title")
 job_description = st.text_area("Job Description", placeholder="Enter a detailed description of the job")
 deadline = st.date_input("Application Deadline", min_value=datetime.date.today(), help="Select the deadline for applications")
+salary = st.text_input("Salary", placeholder="Enter the salary range or amount (optional)")
 
-# Button to post the job
 if st.button("Post Job"):
     if company_id and job_title and job_description and deadline:
-        # API payload
+        st.info(f"Deadline: {deadline.strftime('%Y-%m-%d')}")
+
         job_data = {
             "companyID": company_id,
             "title": job_title,
-            "description": job_description,
-            "deadline": deadline.strftime("%Y-%m-%d")
+            "description": job_description
         }
-
-        # Post the job to the API
         try:
-            response = requests.post("http://api:4000/emp/jobs", json=job_data)
+            response = requests.post("http://api:4000/emp/job", json=job_data)
             if response.status_code == 201:
                 st.success("Job posted successfully!")
             else:

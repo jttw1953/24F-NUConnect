@@ -17,7 +17,7 @@ tags = st.text_input("Tags (comma-separated)")
 if st.button("Post Discussion"):
     try:
         payload = {"createdBy": 1, "title": title, "content": content, "tags": tags}  # Replace 1 with dynamic student ID
-        response = requests.post("http://localhost:5000/ForumDiscussion", json=payload)
+        response = requests.post("http://api:4000/stu/ForumDiscussion", json=payload)
         if response.status_code == 201:
             st.success("Discussion posted successfully")
         else:
