@@ -136,68 +136,7 @@ def delete_employer(employer_id):
     response.status_code = 200
     return response
 
-# return a student
-@employer.route('/students', methods=['GET'])
-def get_students():
-    query = '''
-        SELECT
-            User.userID,
-            User.email,
-            User.phoneNum,
-            User.firstName,
-            User.lastName,
-            Student.major,
-            Student.admitYear,
-            GROUP_CONCAT(Skill.name) AS skills
-        FROM
-            User
-        INNER JOIN
-            Student ON User.userID = Student.userID
-        LEFT JOIN
-            Skill ON Student.studentID = Skill.studentID
-        GROUP BY
-            User.userID, User.email, User.phoneNum, User.firstName, User.lastName, Student.major, Student.admitYear;'''
-    
-    cursor = db.get_db().cursor()
-    cursor.execute(query)
-    theData = cursor.fetchall()
-    
-    the_response = make_response(jsonify(theData))
-    the_response.status_code = 200
-    return the_response
-
-
-@employer.route('/students/<int:user_id>', methods=['GET'])
-def get_student_by_id(user_id):
-    query = f'''
-        SELECT
-        User.userID,
-        User.email,
-        User.phoneNum,
-        User.firstName, 
-        User.lastName,
-        Student.major,
-        Student.admitYear,
-        GROUP_CONCAT(Skill.name) AS skills
-        FROM User
-        INNER JOIN Student ON User.userID = Student.userID
-        LEFT JOIN Skill ON Student.studentID = Skill.studentID
-        WHERE User.userID = {user_id}
-        GROUP BY User.userID, User.email, User.phoneNum, User.firstName, User.lastName, Student.major, Student.admitYear; 
-        '''
-    cursor = db.get_db().cursor()
-    cursor.execute(query)
-    employer = cursor.fetchone()
-
-    if employer:
-        response = make_response(jsonify(employer))
-        response.status_code = 200
-    else:
-        response = make_response({"error": f"Student with User ID {user_id} not found"})
-        response.status_code = 404
-    return response
-
-# return a role
+# 5 return a role
 @employer.route('/role/<int:user_id>', methods=['GET'])
 def get_role(user_id):
     query = f'''

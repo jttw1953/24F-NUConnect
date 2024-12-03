@@ -204,3 +204,97 @@ def add_comment():
     response = make_response({"message": "Comment added successfully"})
     response.status_code = 201
     return response
+
+
+#9 return a student
+@student.route('/students', methods=['GET'])
+def get_students():
+    query = '''
+        SELECT
+            User.userID,
+            User.email,
+            User.phoneNum,
+            User.firstName,
+            User.lastName,
+            Student.major,
+            Student.admitYear,
+            GROUP_CONCAT(Skill.name) AS skills
+        FROM
+            User
+        INNER JOIN
+            Student ON User.userID = Student.userID
+        LEFT JOIN
+            Skill ON Student.studentID = Skill.studentID
+        GROUP BY
+            User.userID, User.email, User.phoneNum, User.firstName, User.lastName, Student.major, Student.admitYear;'''
+    
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    theData = cursor.fetchall()
+    
+    the_response = make_response(jsonify(theData))
+    the_response.status_code = 200
+    return the_response
+
+
+#10 return a student by user id
+@student.route('/students/<int:user_id>', methods=['GET'])
+def get_student_by_id(user_id):
+    query = f'''
+        SELECT
+        User.userID,
+        User.email,
+        User.phoneNum,
+        User.firstName, 
+        User.lastName,
+        Student.major,
+        Student.admitYear,
+        GROUP_CONCAT(Skill.name) AS skills
+        FROM User
+        INNER JOIN Student ON User.userID = Student.userID
+        LEFT JOIN Skill ON Student.studentID = Skill.studentID
+        WHERE User.userID = {user_id}
+        GROUP BY User.userID, User.email, User.phoneNum, User.firstName, User.lastName, Student.major, Student.admitYear; 
+        '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    employer = cursor.fetchone()
+
+    if employer:
+        response = make_response(jsonify(employer))
+        response.status_code = 200
+    else:
+        response = make_response({"error": f"Student with User ID {user_id} not found"})
+        response.status_code = 404
+    return response
+
+# return student applciation by user id
+@student.route('/applications/student/<int:user_id>', methods=['GET'])
+def get_student_applications(user_id):
+    query = """
+        SELECT
+            Application.appID,
+            Job.title AS jobTitle,
+            Company.name AS companyName,
+            CONCAT(User.firstName, ' ', User.lastName) AS employerName,
+            Application.status,
+            Application.dateSubmitted
+        FROM
+            Application
+        INNER JOIN
+            Student ON Application.studentID = Student.studentID
+        INNER JOIN
+            Job ON Application.jobID = Job.jobID
+        INNER JOIN
+            Employers ON Job.employerID = Employers.employerID
+        INNER JOIN
+            User ON Employers.userID = User.userID
+        INNER JOIN
+            Company ON Job.companyID = Company.companyID
+        WHERE
+            Student.userID = %s;
+    """
+    cursor = db.get_db().cursor()
+    cursor.execute(query, (user_id,))
+    results = cursor.fetchall()
+    return jsonify(results) if results else jsonify({"error": "No applications found"}), 404
