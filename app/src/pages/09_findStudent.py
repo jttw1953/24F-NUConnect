@@ -8,7 +8,7 @@ SideBarLinks()
 
 st.title("Find Students")
 
-results = requests.get('http://api:4000/emp/students').json()
+results = requests.get('http://api:4000/stu/students').json()
 
 if results:
     for student in results:

@@ -14,7 +14,7 @@ else:
     role = None
 
 if role == "student":
-    profile = requests.get(f"http://api:4000/emp/students/{st.session_state['user id']}").json()
+    profile = requests.get(f"http://api:4000/stu/students/{st.session_state['user id']}").json()
     if profile:
         st.subheader("Student Profile")
         st.image(st.session_state['profile_pic'], width=150)
