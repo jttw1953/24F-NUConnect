@@ -70,3 +70,6 @@ elif role == "admin":
 
 else:
     st.error("Invalid user role or user not found.")
+
+
+# Student Profile

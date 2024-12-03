@@ -32,3 +32,34 @@ if results:
             st.markdown("---") 
 else:
     st.write("No discussions available.")
+
+# Search forum discussions
+st.subheader("Search Discussions")
+tags = st.text_input("Enter tags to filter discussions (e.g., 'co-op', 'interview')")
+if st.button("Search Discussions"):
+    try:
+        response = requests.get(f"http://localhost:5000/ForumDiscussion?tags={tags}")
+        if response.status_code == 200:
+            discussions = response.json()
+            for discussion in discussions:
+                st.write(f"**{discussion['title']}**: {discussion['content']}")
+        else:
+            st.error("Unable to fetch forum discussions. Please try again later.")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+
+# Create a new discussion
+st.subheader("Create a New Discussion")
+title = st.text_input("Title")
+content = st.text_area("Content")
+tags = st.text_input("Tags (comma-separated)")
+if st.button("Post Discussion"):
+    try:
+        payload = {"createdBy": 1, "title": title, "content": content, "tags": tags}  # Replace 1 with dynamic student ID
+        response = requests.post("http://localhost:5000/ForumDiscussion", json=payload)
+        if response.status_code == 201:
+            st.success("Discussion posted successfully")
+        else:
+            st.error("Failed to post discussion")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
