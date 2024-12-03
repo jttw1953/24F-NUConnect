@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import streamlit as st
 from modules.menubar import SideBarLinks
-
+SideBarLinks()
 st.set_page_config(layout = 'wide')
 
 st.title("Visualization")
