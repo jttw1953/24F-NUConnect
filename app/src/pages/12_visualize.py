@@ -6,12 +6,13 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import streamlit as st
 from modules.menubar import SideBarLinks
-SideBarLinks()
+
 st.set_page_config(layout = 'wide')
+SideBarLinks()
 
 st.title("Visualization")
 
-tables = ["Forum Discussions", "Comments", "Applications", "Jobs"]
+tables = ["Select", "Forum Discussions", "Comments", "Applications", "Jobs"]
 forum = pd.DataFrame(requests.get('http://api:4000/analyst/ForumDiscussion').json())
 
 students = pd.DataFrame(requests.get('http://api:4000/analyst/Students').json())
@@ -22,7 +23,12 @@ jobs= pd.DataFrame(requests.get('http://api:4000/analyst/Jobs').json())
 
 
 
-selected_table = st.selectbox("Select a table to display visualizations:", list(tables), index = None)
+selected_table = st.selectbox("Select a table to display visualizations:", list(tables))
+if selected_table == "Select":
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write("No Table Selected")
+
 if selected_table == 'Forum Discussions':
     st.write("Forum Discussions")
     col1, col2 = st.columns(2)
@@ -39,7 +45,6 @@ if selected_table == 'Forum Discussions':
         largest_with_ties = [k for k, v in counts.items() if v == largest] # O(n)
         result = sorted(largest_with_ties)
 
-        SideBarLinks()
         labels = result[0:5]
         sizes = [writers.count(x) for x in labels]
         labels = ["User ID " + str(res) + "" for res in labels]
@@ -65,7 +70,6 @@ if selected_table == 'Comments':
         largest_with_ties = [k for k, v in counts.items() if v == largest] # O(n)
         result = sorted(largest_with_ties)
 
-        SideBarLinks()
         labels = result[0:5]
         sizes = [writers.count(x) for x in labels]
         labels = ["User ID " + str(res) + "" for res in labels]
@@ -90,7 +94,6 @@ if selected_table == 'Applications':
         largest = max(counts.values()) # O(n)
         largest_with_ties = [k for k, v in counts.items()] # O(n)
         result = sorted(largest_with_ties)
-        SideBarLinks()
         labels = result
         sizes = [writers.count(x) for x in labels]
         labels = ["Job ID " + str(res) + "" for res in labels]
@@ -116,7 +119,6 @@ if selected_table == 'Jobs':
         largest = max(counts.values()) # O(n)
         largest_with_ties = [k for k, v in counts.items()] # O(n)
         result = sorted(largest_with_ties)
-        SideBarLinks()
         labels = result
         sizes = [writers.count(x) for x in labels]
         fig1, ax1 = plt.subplots()
