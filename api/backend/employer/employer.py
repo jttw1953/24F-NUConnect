@@ -186,3 +186,57 @@ def get_employer_applications(user_id):
         return jsonify({"message": "No applications found."}), 404
 
 
+#employer posts a job
+@employer.route('/emp/job', methods=['POST'])
+def post_job():
+    data = request.get_json()
+    company_name = data.get("companyName")
+    title = data.get("title")
+    description = data.get("description")
+    deadline = data.get("deadline")
+    employer_id = 1  # Replace with logic to fetch employer ID from session or request context
+
+    if not (company_name and title and description and deadline):
+        return jsonify({"error": "All fields are required"}), 400
+
+    try:
+        query = """
+            INSERT INTO Job (companyID, employerID, title, datePosted, description)
+            VALUES (
+                (SELECT companyID FROM Company WHERE name = %s),
+                %s,
+                %s,
+                NOW(),
+                %s
+            );
+        """
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (company_name, employer_id, title, description))
+        db.get_db().commit()
+        return jsonify({"message": "Job posted successfully"}), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+
+#get employer's company information
+@employer.route('company/<int:user_id>', methods=['GET'])
+def get_employer_company(user_id):
+    query = """
+        SELECT 
+            Company.companyID,
+            Company.name AS companyName
+        FROM 
+            Company
+        INNER JOIN 
+            Employers ON Company.companyID = Employers.companyID
+        WHERE 
+            Employers.userID = %s;
+    """
+    cursor = db.get_db().cursor()
+    cursor.execute(query, (user_id,))
+    result = cursor.fetchone()
+    
+    if result:
+        return jsonify(result), 200
+    else:
+        return jsonify({"error": "Company not found for this employer."}), 404
