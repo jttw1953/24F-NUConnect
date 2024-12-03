@@ -149,3 +149,38 @@ def get_role(user_id):
     the_response = make_response(jsonify(theData))
     the_response.status_code = 200
     return the_response
+
+#return all applicaction applied by students:
+
+@employer.route('/applications/employer/<int:user_id>', methods=['GET'])
+def get_employer_applications(user_id):
+    query = f"""
+            SELECT
+                EmployerUser.userID AS employerUserID,
+                Application.appID,
+                Job.title AS jobTitle,
+                Company.name AS companyName,
+                CONCAT(StudentUser.firstName, ' ', StudentUser.lastName) AS studentName,
+                Application.status,
+                Application.dateSubmitted
+
+            FROM
+                Application
+            INNER JOIN
+                Job ON Application.jobID = Job.jobID
+            INNER JOIN
+                Company ON Job.companyID = Company.companyID
+            INNER JOIN
+                Student ON Application.studentID = Student.studentID
+            INNER JOIN
+                User AS StudentUser ON Student.userID = StudentUser.userID
+            INNER JOIN
+                Employers ON Job.employerID = Employers.employerID
+            INNER JOIN
+                User AS EmployerUser ON Employers.userID = EmployerUser.userID
+            WHERE Employers.userID = {user_id};
+    """
+    cursor = db.get_db().cursor()
+    cursor.execute(query, (user_id,))
+    results = cursor.fetchall()
+    return jsonify(results) if results else jsonify({"error": "No applications found"}), 404

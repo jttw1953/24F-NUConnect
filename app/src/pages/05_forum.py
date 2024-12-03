@@ -9,7 +9,26 @@ import requests
 
 st.title("Forum Discussions")
 
+# Create a new discussion
+st.subheader("Create a New Discussion")
+title = st.text_input("Title")
+content = st.text_area("Content")
+tags = st.text_input("Tags (comma-separated)")
+if st.button("Post Discussion"):
+    try:
+        payload = {"createdBy": 1, "title": title, "content": content, "tags": tags}  # Replace 1 with dynamic student ID
+        response = requests.post("http://localhost:5000/ForumDiscussion", json=payload)
+        if response.status_code == 201:
+            st.success("Discussion posted successfully")
+        else:
+            st.error("Failed to post discussion")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+
+
 # Fetch discussions from the backend
+st.subheader("Discussion Posts")
+
 results = requests.get('http://api:4000/ad/forumdiscussions').json()
 
 if results:
@@ -48,18 +67,3 @@ if st.button("Search Discussions"):
     except Exception as e:
         st.error(f"An error occurred: {e}")
 
-# Create a new discussion
-st.subheader("Create a New Discussion")
-title = st.text_input("Title")
-content = st.text_area("Content")
-tags = st.text_input("Tags (comma-separated)")
-if st.button("Post Discussion"):
-    try:
-        payload = {"createdBy": 1, "title": title, "content": content, "tags": tags}  # Replace 1 with dynamic student ID
-        response = requests.post("http://localhost:5000/ForumDiscussion", json=payload)
-        if response.status_code == 201:
-            st.success("Discussion posted successfully")
-        else:
-            st.error("Failed to post discussion")
-    except Exception as e:
-        st.error(f"An error occurred: {e}")

@@ -515,6 +515,13 @@ Page hear learn race when year.');
 INSERT INTO `Job` (jobID, companyID, employerID, title, datePosted, description) VALUES (39, 40, 11, 'Production assistant, radio', '2023-11-10 20:13:19', 'Task study factor environment measure majority soldier thus. Put power field with.');
 INSERT INTO `Job` (jobID, companyID, employerID, title, datePosted, description) VALUES (40, 31, 35, 'Geoscientist', '2020-01-04 19:05:30', 'Single education daughter lead learn.
 Natural expert despite his property cold. Recent economy cause moment. College music word girl. Herself stage whose push toward best.');
+INSERT INTO `Job` (jobID, companyID, employerID, title, datePosted, description)
+VALUES
+(41, 2, 1, 'Software Engineer Intern', '2024-12-01 10:00:00', 'Develop and maintain software solutions, collaborate with cross-functional teams, and debug applications.'),
+(42, 2, 1, 'Marketing Coordinator', '2024-12-02 09:00:00', 'Assist in marketing campaigns, analyze performance metrics, and coordinate with the marketing team to enhance brand visibility.'),
+(43, 2, 1, 'Graphic Designer', '2024-12-03 11:30:00', 'Create visually appealing designs for digital and print media, collaborate on branding projects, and deliver creative assets.'),
+(44, 2, 1, 'Customer Support Representative', '2024-12-04 14:00:00', 'Provide excellent customer service, resolve inquiries, and ensure customer satisfaction through effective communication.');
+
 
 -- Sample Data for Application Table
 INSERT INTO `Application` (appID, studentID, jobID, dateSubmitted, status) VALUES (1, 14, 6, '2024-02-11 04:54:34', 'approved');
@@ -557,6 +564,14 @@ INSERT INTO `Application` (appID, studentID, jobID, dateSubmitted, status) VALUE
 INSERT INTO `Application` (appID, studentID, jobID, dateSubmitted, status) VALUES (38, 2, 22, '2024-04-24 11:07:24', 'approved');
 INSERT INTO `Application` (appID, studentID, jobID, dateSubmitted, status) VALUES (39, 28, 16, '2024-10-24 18:48:58', 'pending');
 INSERT INTO `Application` (appID, studentID, jobID, dateSubmitted, status) VALUES (40, 24, 26, '2024-08-25 04:12:26', 'approved');
+INSERT INTO `Application` (appID, studentID, jobID, dateSubmitted, status)
+VALUES
+(42, 12, 42, '2024-12-02 14:00:00', 'pending'),
+(43, 18, 42, '2024-12-02 15:00:00', 'approved'),
+(44, 25, 43, '2024-12-03 10:00:00', 'rejected'),
+(45, 30, 44, '2024-12-04 09:00:00', 'pending'),
+(46, 35, 44, '2024-12-04 10:00:00', 'approved'),
+(47, 20, 41, '2024-12-05 11:00:00', 'interviewed');
 
 -- Sample Data for Comment Table
 INSERT INTO `Comment` (commentID, createdBy, forumID, content, createdAt) VALUES 
