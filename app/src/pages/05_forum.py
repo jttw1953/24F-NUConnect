@@ -25,6 +25,20 @@ if st.button("Post Discussion"):
     except Exception as e:
         st.error(f"An error occurred: {e}")
 
+# Search forum discussions
+st.subheader("Search Discussions")
+tags = st.text_input("Enter tags to filter discussions (e.g., 'co-op', 'interview')")
+if st.button("Search Discussions"):
+    try:
+        response = requests.get(f"http://api:4000/emp/forumdiscussion/tags/{tags}")
+        if response.status_code == 200:
+            discussions = response.json()
+            for discussion in discussions:
+                st.write(f"**{discussion['title']}**: {discussion['content']}")
+        else:
+            st.error("Unable to fetch forum discussions. Please try again later.")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
 
 # Fetch discussions from the backend
 st.subheader("Discussion Posts")
@@ -51,19 +65,4 @@ if results:
             st.markdown("---") 
 else:
     st.write("No discussions available.")
-
-# Search forum discussions
-st.subheader("Search Discussions")
-tags = st.text_input("Enter tags to filter discussions (e.g., 'co-op', 'interview')")
-if st.button("Search Discussions"):
-    try:
-        response = requests.get(f"http://api:4000/emp/forumdiscussion/tags/{tags}")
-        if response.status_code == 200:
-            discussions = response.json()
-            for discussion in discussions:
-                st.write(f"**{discussion['title']}**: {discussion['content']}")
-        else:
-            st.error("Unable to fetch forum discussions. Please try again later.")
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
 
