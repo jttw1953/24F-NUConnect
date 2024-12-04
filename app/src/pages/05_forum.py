@@ -57,7 +57,7 @@ st.subheader("Search Discussions")
 tags = st.text_input("Enter tags to filter discussions (e.g., 'co-op', 'interview')")
 if st.button("Search Discussions"):
     try:
-        response = requests.get(f"http://localhost:5000/ForumDiscussion?tags={tags}")
+        response = requests.get(f"http://api:4000/emp/forumdiscussion/tags/{tags}")
         if response.status_code == 200:
             discussions = response.json()
             for discussion in discussions:
