@@ -298,3 +298,55 @@ def get_student_applications(user_id):
     cursor.execute(query, (user_id,))
     results = cursor.fetchall()
     return jsonify(results) if results else jsonify({"error": "No applications found"}), 404
+
+@student.route('/Employers', methods=["GET"])
+def get_all_employers():
+    query = '''
+        SELECT * 
+        FROM Company
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    theData = cursor.fetchall()
+
+    response = make_response(jsonify(theData))
+    response.status_code = 200
+    return response
+
+# Get all Jobs
+@student.route('/Jobs', methods=["GET"])
+def get_all_jobs():
+    query = '''
+        SELECT * 
+        FROM Job
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    theData = cursor.fetchall()
+
+    response = make_response(jsonify(theData))
+    response.status_code = 200
+    return response
+
+# 3. POST a new employer
+@student.route('/Apply', methods=['POST'])
+def apply():
+    data = request.get_json()
+    studentID = data.get("studentID")
+    jobID = data.get("jobID")
+    status = data.get("status")
+
+    if not (studentID and jobID and status):
+        return jsonify({"error": "All fields are required"}), 400
+
+    try:
+        query = """
+            INSERT INTO Application (studentID, jobID, status)
+            VALUES (%s, %s, %s);
+        """
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (studentID, jobID, status))
+        db.get_db().commit()
+        return jsonify({"message": "Application successful"}), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
