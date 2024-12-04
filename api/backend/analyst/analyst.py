@@ -5,6 +5,9 @@ from datetime import datetime, timedelta
 # Create the Blueprint object for Analyst routes
 analyst = Blueprint('analyst', __name__)
 
+"""
+GET METHODS
+"""
 # Get a count of new jobs, applications, discussions, and comments in the last day
 @analyst.route('/DailySummary', methods=["GET"])
 def get_summary():
@@ -182,3 +185,51 @@ def get_analyst_profile(user_id):
         return make_response(jsonify(result), 200)
     else:
         return make_response({"error": f"Analyst with User ID {user_id} not found."}, 404)
+    
+
+"""
+POST and PUT routes
+"""
+
+# POST a new forum discussion
+@analyst.route('/ForumDiscussion', methods=['POST'])
+def post_forum_discussion():
+    data = request.json
+    query = f'''
+        INSERT INTO ForumDiscussion (createdBy, content, title, tags)
+        VALUES ('{data["createdBy"]}', '{data["content"]}', '{data["title"]}', '{data["tags"]}')
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    db.get_db().commit()
+
+    response = make_response({"message": "Discussion created successfully"})
+    response.status_code = 201
+    return response
+
+#Update a forum discussion
+@analyst.route('/ForumDiscussion/<int:post_id>', methods=['PUT'])
+def update_forum_post(post_id):
+    data = request.json
+    updates = []
+
+    if 'content' in data:
+        updates.append(f"content = '{data['content']}'")
+    if 'tags' in data:
+        updates.append(f"tags = '{data['tags']}'")
+
+    if not updates:
+        return make_response({"error": "No fields provided for update"}, 400)
+
+    query = f'''
+        UPDATE ForumDiscussion
+        SET {', '.join(updates)}
+        WHERE discussionID = {post_id};
+    '''
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    db.get_db().commit()
+
+    response = make_response({"message": f"Discussion {post_id} updated successfully"})
+    response.status_code = 200
+    return response
