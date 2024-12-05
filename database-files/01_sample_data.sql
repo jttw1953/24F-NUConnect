@@ -185,46 +185,47 @@ INSERT INTO `Admin` (adminID, userID) VALUES (39, 79);
 INSERT INTO `Admin` (adminID, userID) VALUES (40, 80);
 
 -- Sample Data for Student Table
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (1, 1, 'Engineering', 2017, 'Former my up hit.', '2024-08-14 01:32:55');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (2, 2, 'Engineering', 2021, 'Bring western buy themselves address memory.', '2024-05-07 06:23:19');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (3, 3, 'Engineering', 2016, 'Any outside reality suffer somebody.', '2024-06-26 17:24:54');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (4, 4, 'Computer Science', 2017, 'Subject serious movement operation join health.', '2024-11-21 06:36:37');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (5, 5, 'Business', 2023, 'Wait here consumer.', '2024-11-14 02:19:37');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (6, 6, 'Computer Science', 2022, 'Learn chance three rock exist line.', '2024-06-22 09:50:55');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (7, 7, 'Engineering', 2022, 'Contain score find increase change mention.', '2024-05-13 06:58:46');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (8, 8, 'Engineering', 2019, 'Tax ball thousand.', '2024-04-03 14:11:54');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (9, 9, 'Computer Science', 2024, 'Article either travel sort.', '2024-06-04 03:30:41');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (10, 10, 'Business', 2024, 'Employee mouth keep understand enter true.', '2024-09-11 16:48:19');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (11, 11, 'Engineering', 2015, 'At buy above.', '2024-01-06 00:43:13');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (12, 12, 'Arts', 2024, 'Sort indeed give.', '2024-11-18 07:43:13');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (13, 13, 'Engineering', 2017, 'Truth lose step sure.', '2024-10-16 04:34:42');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (14, 14, 'Business', 2018, 'These continue scene environment.', '2024-02-11 19:37:01');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (15, 15, 'Arts', 2024, 'Chair able pass forward character.', '2024-08-24 20:37:58');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (16, 16, 'Business', 2024, 'Want lawyer remember whom.', '2024-09-22 11:59:14');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (17, 17, 'Computer Science', 2019, 'Ball perhaps accept everybody tell.', '2024-03-07 03:53:39');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (18, 18, 'Business', 2019, 'Mr clearly forget treat.', '2024-05-13 01:40:39');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (19, 19, 'Engineering', 2015, 'Reveal face increase.', '2024-01-12 16:02:33');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (20, 20, 'Computer Science', 2016, 'Growth film necessary professional ask.', '2024-02-17 20:46:50');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (21, 21, 'Computer Science', 2015, 'Black maintain red decide campaign.', '2024-02-06 18:25:34');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (22, 22, 'Business', 2022, 'Establish but professional side natural.', '2024-09-29 20:25:29');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (23, 23, 'Computer Science', 2017, 'Job between total the.', '2024-03-02 07:08:41');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (24, 24, 'Business', 2017, 'Bar type fine room own bag.', '2024-11-10 15:09:51');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (25, 25, 'Arts', 2018, 'Consider sure impact decide.', '2024-11-09 11:51:23');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (26, 26, 'Engineering', 2016, 'Central on with.', '2024-02-15 14:00:25');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (27, 27, 'Arts', 2015, 'Sea total strategy somebody source.', '2024-08-21 05:38:36');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (28, 28, 'Arts', 2017, 'Try purpose list rate accept.', '2024-04-10 05:34:04');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (29, 29, 'Arts', 2018, 'Learn south maybe chance.', '2024-06-06 08:34:25');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (30, 30, 'Arts', 2024, 'Produce and respond full.', '2024-04-28 06:05:24');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (31, 31, 'Business', 2023, 'Region beat support local reality.', '2024-11-20 15:40:09');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (32, 32, 'Engineering', 2022, 'Cold cover friend our treat.', '2024-04-01 05:58:28');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (33, 33, 'Business', 2015, 'Care challenge law.', '2024-09-08 11:44:10');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (34, 34, 'Arts', 2015, 'Environment represent begin.', '2024-05-06 22:46:43');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (35, 35, 'Computer Science', 2022, 'Understand star great.', '2024-03-29 14:41:38');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (36, 36, 'Business', 2015, 'Follow scientist what.', '2024-06-20 12:08:31');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (37, 37, 'Engineering', 2016, 'During federal safe list.', '2024-07-09 17:43:18');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (38, 38, 'Engineering', 2016, 'Fact hand describe person service.', '2024-09-07 08:27:26');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (39, 39, 'Business', 2019, 'Firm continue yard minute.', '2024-11-15 01:08:55');
-INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES (40, 40, 'Engineering', 2023, 'Term film prove.', '2024-10-24 20:27:16');
+INSERT INTO `Student` (studentID, userID, major, admitYear, tags, updatedAt) VALUES 
+(1, 1, 'Engineering', 2017, 'Robotics, AI enthusiast, Team leader', '2024-08-14 01:32:55'),
+(2, 2, 'Engineering', 2021, 'CAD designer, Internship at Tesla, Math club', '2024-05-07 06:23:19'),
+(3, 3, 'Engineering', 2016, 'Aerospace, Public speaker, Senior mentor', '2024-06-26 17:24:54'),
+(4, 4, 'Computer Science', 2017, 'Full-stack developer, Hackathon winner, Volunteer coder', '2024-11-21 06:36:37'),
+(5, 5, 'Business', 2023, 'Startup founder, Marketing, Case competition finalist', '2024-11-14 02:19:37'),
+(6, 6, 'Computer Science', 2022, 'Machine learning, Open-source contributor, Python expert', '2024-06-22 09:50:55'),
+(7, 7, 'Engineering', 2022, 'Automotive enthusiast, Formula SAE, Mechanical engineering', '2024-05-13 06:58:46'),
+(8, 8, 'Engineering', 2019, 'Civil engineering, Bridge design, Sustainability advocate', '2024-04-03 14:11:54'),
+(9, 9, 'Computer Science', 2024, 'Cybersecurity, Ethical hacker, CTF competitor', '2024-06-04 03:30:41'),
+(10, 10, 'Business', 2024, 'Finance major, Equity trader, Economics tutor', '2024-09-11 16:48:19'),
+(11, 11, 'Engineering', 2015, 'Environmental engineer, Green energy advocate', '2024-01-06 00:43:13'),
+(12, 12, 'Arts', 2024, 'Painting, Art exhibition curator, Creative writing', '2024-11-18 07:43:13'),
+(13, 13, 'Engineering', 2017, 'Structural analysis, Steel bridge design, Math club', '2024-10-16 04:34:42'),
+(14, 14, 'Business', 2018, 'Supply chain management, Logistician, Public speaking', '2024-02-11 19:37:01'),
+(15, 15, 'Arts', 2024, 'Theatre, Performance art, Poetry', '2024-08-24 20:37:58'),
+(16, 16, 'Business', 2024, 'Marketing strategist, Social media campaigns', '2024-09-22 11:59:14'),
+(17, 17, 'Computer Science', 2019, 'Game developer, Unity 3D, Computer graphics', '2024-03-07 03:53:39'),
+(18, 18, 'Business', 2019, 'Entrepreneurship, Business analytics, Public relations', '2024-05-13 01:40:39'),
+(19, 19, 'Engineering', 2015, 'Construction management, Surveying, GIS mapping', '2024-01-12 16:02:33'),
+(20, 20, 'Computer Science', 2016, 'AI research, Neural networks, TensorFlow', '2024-02-17 20:46:50'),
+(21, 21, 'Computer Science', 2015, 'Data scientist, SQL expert, Big data', '2024-02-06 18:25:34'),
+(22, 22, 'Business', 2022, 'Human resources, Organizational behavior, DEI advocate', '2024-09-29 20:25:29'),
+(23, 23, 'Computer Science', 2017, 'Cloud computing, AWS certified, Kubernetes', '2024-03-02 07:08:41'),
+(24, 24, 'Business', 2017, 'Retail management, Brand strategy, Customer relations', '2024-11-10 15:09:51'),
+(25, 25, 'Arts', 2018, 'Photography, Film editing, Digital storytelling', '2024-11-09 11:51:23'),
+(26, 26, 'Engineering', 2016, 'Renewable energy, Wind turbine design', '2024-02-15 14:00:25'),
+(27, 27, 'Arts', 2015, 'Graphic design, Illustrator, Visual arts', '2024-08-21 05:38:36'),
+(28, 28, 'Arts', 2017, 'Sculpture, Woodworking, Crafting', '2024-04-10 05:34:04'),
+(29, 29, 'Arts', 2018, 'Fashion design, Textile artist, Illustrator', '2024-06-06 08:34:25'),
+(30, 30, 'Arts', 2024, 'Music composition, Classical piano, Songwriting', '2024-04-28 06:05:24'),
+(31, 31, 'Business', 2023, 'Investment banking, Financial modeling, Startup mentor', '2024-11-20 15:40:09'),
+(32, 32, 'Engineering', 2022, 'Chemical engineering, Lab researcher, Process control', '2024-04-01 05:58:28'),
+(33, 33, 'Business', 2015, 'Real estate, Property management, Housing policy', '2024-09-08 11:44:10'),
+(34, 34, 'Arts', 2015, 'Abstract painting, Museum docent, Art historian', '2024-05-06 22:46:43'),
+(35, 35, 'Computer Science', 2022, 'Software engineer, JavaScript guru, React developer', '2024-03-29 14:41:38'),
+(36, 36, 'Business', 2015, 'Economist, Policy analyst, Market researcher', '2024-06-20 12:08:31'),
+(37, 37, 'Engineering', 2016, 'Nuclear engineering, Radiation safety expert', '2024-07-09 17:43:18'),
+(38, 38, 'Engineering', 2016, 'Mechanical systems, Design thinking, Robotics', '2024-09-07 08:27:26'),
+(39, 39, 'Business', 2019, 'Advertising, Campaign manager, Public relations', '2024-11-15 01:08:55'),
+(40, 40, 'Engineering', 2023, 'Drone engineering, Embedded systems, Coding enthusiast', '2024-10-24 20:27:16');
 
 -- Sample Data for Skill Table
 INSERT INTO `Skill` (skillID, name, description, studentID) VALUES
