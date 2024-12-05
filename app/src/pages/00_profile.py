@@ -7,12 +7,14 @@ logger = logging.getLogger(__name__)
 
 SideBarLinks()
 
+# Sends a GET request to the API endpoint to retrieve the role information of the currently logged-in user using their user ID from the session state.
 role_response = requests.get(f"http://api:4000/emp/role/{st.session_state['user id']}").json()
 if role_response and isinstance(role_response, list):
     role = role_response[0].get("role", "").lower()
 else:
     role = None
 
+#student profile
 if role == "student":
     profile = requests.get(f"http://api:4000/stu/students/{st.session_state['user id']}").json()
     if profile:
@@ -27,6 +29,7 @@ if role == "student":
     else:
         st.error("Student profile not found.")
 
+#employer profile
 elif role == "employer":
     profile = requests.get(f"http://api:4000/emp/employers/{st.session_state['user id']}").json()
     if profile:
@@ -41,6 +44,7 @@ elif role == "employer":
     else:
         st.error("Employer profile not found.")
 
+#analyst profile
 elif role == "analyst":
     profile = requests.get(f"http://api:4000/analyst/analysts/{st.session_state['user id']}").json()
     if profile:
@@ -71,5 +75,3 @@ elif role == "admin":
 else:
     st.error("Invalid user role or user not found.")
 
-
-# Student Profile
