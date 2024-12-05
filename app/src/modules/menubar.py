@@ -5,50 +5,50 @@ def Logout():
     st.sidebar.page_link("Home.py", label="Logout", icon="↩")
 
 def UserProf():
-    st.sidebar.page_link("pages/04_profile.py", label="Profile", icon="🫵🏼")
+    st.sidebar.page_link("pages/00_profile.py", label="Profile", icon="🫵🏼")
 
 def ForumMenu(): 
-    st.sidebar.page_link("pages/05_forum.py", label="Discussion", icon="📰")
+    st.sidebar.page_link("pages/01_forum.py", label="Discussion", icon="📰")
 
 # Student-specific menus
 def ApplicationApply():
-    st.sidebar.page_link("pages/06_appApply.py", label="Application Apply", icon="📝")
+    st.sidebar.page_link("pages/02_appApply.py", label="Application Apply", icon="📝")
 
 def ApplicationStatus():
-    st.sidebar.page_link("pages/07_appStatus.py", label="Application Status", icon="📄")
+    st.sidebar.page_link("pages/03_appStatus.py", label="Application Status", icon="📄")
 
 # Employer-specific menus
 def PostJobMenu():
-    st.sidebar.page_link("pages/08_postJob.py", label="Post Job", icon="📋")
+    st.sidebar.page_link("pages/21_postJob.py", label="Post Job", icon="📋")
 
 def FindEmployeeMenu():
-    st.sidebar.page_link("pages/09_findStudent.py", label="Find Students", icon="🔍")
+    st.sidebar.page_link("pages/22_findStudent.py", label="Find Students", icon="🔍")
 
 # Analyst-specific menus
 def SummaryMenu():
-    st.sidebar.page_link("pages/10_summary.py", label="Summary", icon="📊")
+    st.sidebar.page_link("pages/41_summary.py", label="Summary", icon="📊")
 
 def DataMenu():
-    st.sidebar.page_link("pages/11_data.py", label="Data", icon="📈")
+    st.sidebar.page_link("pages/42_data.py", label="Data", icon="📈")
 
 def VisualizeMenu():
-    st.sidebar.page_link("pages/12_visualize.py", label="Visualize", icon="🖼️")
+    st.sidebar.page_link("pages/43_visualize.py", label="Visualize", icon="🖼️")
 
 # Admin-specific menus
 def LogMenu():
-    st.sidebar.page_link("pages/13_log.py", label="Logs", icon="📜")
+    st.sidebar.page_link("pages/31_log.py", label="Logs", icon="📜")
 
 def MaintenanceMenu():
-    st.sidebar.page_link("pages/14_maintenance.py", label="Maintenance", icon="🛠️")
+    st.sidebar.page_link("pages/32_maintenance.py", label="Maintenance", icon="🛠️")
 
 def SystemAlertMenu():
-    st.sidebar.page_link("pages/15_systemAlert.py", label="System Alerts", icon="🚨")
+    st.sidebar.page_link("pages/33_systemAlert.py", label="System Alerts", icon="🚨")
 
 def MetricMenu():
-    st.sidebar.page_link("pages/17_metric.py", label="Metrics", icon="📊")
+    st.sidebar.page_link("pages/35_metric.py", label="Metrics", icon="📊")
 
 def FlagMenu():
-    st.sidebar.page_link("pages/16_flag.py", label="Flags", icon="🚩")
+    st.sidebar.page_link("pages/34_flag.py", label="Flags", icon="🚩")
 
 
 def SideBarLinks():
