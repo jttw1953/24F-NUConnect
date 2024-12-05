@@ -376,6 +376,8 @@ def get_activity_log():
     the_response.status_code = 200
     return the_response
 
+#------------------------------------------------------------
+# GET all forum discussions
 @admin.route('/forumdiscussions', methods=['GET'])
 def get_forum_discussions():
     query = """
@@ -411,6 +413,8 @@ def get_forum_discussions():
     response.status_code = 200
     return response
 
+#------------------------------------------------------------
+# GET admin profile based on user id
 @admin.route('/admins/<int:user_id>', methods=['GET'])
 def get_admin_profile(user_id):
     query = """
